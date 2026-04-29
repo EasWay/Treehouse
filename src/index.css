@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-tree-green: #1E3328;
+  --color-tree-charcoal: #141414;
+  --color-tree-ivory: #F5F1EA;
+  --color-tree-brass: #B6915E;
+  --color-tree-amber: #D1A05F;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-tree-charcoal);
+    color: var(--color-tree-ivory);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Luxury button interactions */
+.btn-luxury {
+  border: 1px solid rgba(245, 241, 234, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-luxury::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-tree-ivory);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+.btn-luxury:hover::after {
+  transform: translateY(0);
+}
+.btn-luxury > span {
+  position: relative;
+  z-index: 1;
+}
+.btn-luxury:hover > span {
+  color: var(--color-tree-charcoal);
+}
+
+.btn-primary {
+  background-color: var(--color-tree-brass);
+  color: #141414;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-tree-amber);
+}
+
+/* Image masking */
+.image-mask-oval {
+  mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+}
