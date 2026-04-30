@@ -4,9 +4,10 @@ import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onReserve: () => void;
+  data?: any;
 }
 
-export default function Navbar({ onReserve }: NavbarProps) {
+export default function Navbar({ onReserve, data }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -35,7 +36,7 @@ export default function Navbar({ onReserve }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between w-full">
           <div className="flex items-center gap-12">
             <a href="#" className="font-serif text-2xl tracking-widest uppercase font-bold text-[#B6915E]">
-              Treehouse
+              {data?.name || "Treehouse"}
             </a>
             <div className="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] font-medium opacity-70">
               {navLinks.map((link) => (

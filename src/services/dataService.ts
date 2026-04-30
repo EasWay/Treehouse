@@ -1,18 +1,29 @@
-import metadata from '../../extracted_metadata.json';
+export interface RestaurantData {
+  name: string;
+  phone: string;
+  address: string;
+  website: string;
+  socials: string[];
+  hours: Record<string, string>;
+  images: string[];
+  reviews: string[];
+  menu: {
+    category: string;
+    items: { name: string; price: string }[];
+  }[];
+}
 
-export const restaurantData = {
-  name: metadata.name,
-  phone: metadata.phone,
-  address: metadata.address,
-  website: metadata.website,
-  socials: {
-    instagram: metadata.socials[0],
-    facebook: metadata.socials[1]
-  },
-  hours: metadata.hours,
-  images: metadata.images,
-  reviews: metadata.reviews,
-  menu: metadata.menu
-};
+export async function getRestaurantData(): Promise<RestaurantData> {
+  const res = await fetch('/api/data');
+  if (!res.ok) throw new Error('Failed to fetch data');
+  return res.json();
+}
 
-export type RestaurantData = typeof restaurantData;
+export async function updateRestaurantData(data: RestaurantData): Promise<void> {
+  const res = await fetch('/api/data', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error('Failed to update data');
+}

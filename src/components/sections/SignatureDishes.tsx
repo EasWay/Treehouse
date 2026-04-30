@@ -33,7 +33,13 @@ const signatureItems = [
 ];
 
 interface DishCardProps {
-  item: typeof signatureItems[0];
+  item: {
+    name: string;
+    description: string;
+    price: string;
+    dietary: string;
+    image: string;
+  };
   index: number;
   scrollYProgress: any;
 }
@@ -64,15 +70,20 @@ function DishCard({ item, index, scrollYProgress }: DishCardProps) {
   );
 }
 
-export default function SignatureDishes() {
+export default function SignatureDishes({ data }: { data?: any }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  // Pinning and horizontal scroll logic
-  // We make the container wide/tall enough to scroll, and shift the content horizontally.
+  const displayItems = data?.menu?.flatMap((c: any) => c.items).slice(0, 4).map((item: any, i: number) => ({
+    ...item,
+    description: item.description || "Experimental and delightful Afro-fusion creation.",
+    dietary: item.dietary || "Chef's Special",
+    image: signatureItems[i % signatureItems.length].image // Fallback images
+  })) || signatureItems;
+
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
@@ -105,7 +116,7 @@ export default function SignatureDishes() {
             style={{ x }} 
             className="flex gap-8 px-6 md:px-12 w-[400vw] h-[50vh] min-h-[400px] items-center"
           >
-            {signatureItems.map((item, index) => (
+            {displayItems.map((item: any, index: number) => (
               <DishCard key={index} item={item} index={index} scrollYProgress={scrollYProgress} />
             ))}
             

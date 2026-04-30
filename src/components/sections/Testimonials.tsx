@@ -20,7 +20,7 @@ const reviews = [
   }
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ data }: { data?: any }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -28,6 +28,12 @@ export default function Testimonials() {
   });
 
   const cardsY = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
+
+  const displayReviews = data?.reviews?.map((text: string, i: number) => ({
+    text,
+    author: ["Marjeli J.", "Victor B.", "Kaylin M.", "N Ade", "Joshua A.", "Sandra D."][i % 6] || "Valued Guest",
+    role: "Verified Diner"
+  })) || reviews;
 
   return (
     <section ref={ref} className="py-32 bg-[#141414] relative overflow-hidden">
@@ -37,7 +43,7 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {reviews.map((rev, idx) => (
+          {displayReviews.slice(0, 3).map((rev: any, idx: number) => (
             <motion.div 
               key={idx}
               initial={{ opacity: 0, y: 30 }}

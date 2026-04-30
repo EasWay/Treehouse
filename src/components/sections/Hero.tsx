@@ -3,9 +3,10 @@ import { useRef } from 'react';
 
 interface HeroProps {
   onReserve: () => void;
+  data?: any;
 }
 
-export default function Hero({ onReserve }: HeroProps) {
+export default function Hero({ onReserve, data }: HeroProps) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -35,7 +36,7 @@ export default function Hero({ onReserve }: HeroProps) {
              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
              className="space-y-4 perspective-[1000px]"
           >
-            <p className="text-[#B6915E] uppercase tracking-[0.3em] text-xs font-semibold">Accra's Hidden Sanctuary</p>
+            <p className="text-[#B6915E] uppercase tracking-[0.3em] text-xs font-semibold">{data?.name ? `${data.name}'s Hidden Sanctuary` : "Accra's Hidden Sanctuary"}</p>
             <h1 className="text-6xl md:text-8xl font-serif leading-[0.9] font-light text-[#F5F1EA] tracking-tighter">
               Dine Under <br/>
               <span className="italic block mt-2 text-7xl md:text-9xl">the Canopy</span>
@@ -102,9 +103,9 @@ export default function Hero({ onReserve }: HeroProps) {
              className="absolute bottom-12 -left-4 sm:left-4 lg:right-[320px] lg:left-auto w-56 p-6 bg-[#141414]/80 border border-[#B6915E]/30 shadow-2xl backdrop-blur-md z-30 transform-gpu"
           >
             <p className="text-[10px] uppercase tracking-widest text-[#B6915E] mb-3">Signature Special</p>
-            <p className="text-sm font-serif mb-2 text-[#F5F1EA]">Lobster Thermidor</p>
-            <p className="text-[11px] opacity-60 leading-tight mb-4 text-[#F5F1EA]">Classic preparation with mushrooms, herbs, and Gruyere cheese.</p>
-            <p className="text-sm font-bold text-[#B6915E]">GHS 450</p>
+            <p className="text-sm font-serif mb-2 text-[#F5F1EA]">{data?.menu?.[1]?.items?.[0]?.name || "Lobster Thermidor"}</p>
+            <p className="text-[11px] opacity-60 leading-tight mb-4 text-[#F5F1EA]">Experimental and delightful creation.</p>
+            <p className="text-sm font-bold text-[#B6915E]">{data?.menu?.[1]?.items?.[0]?.price || "GHS 450"}</p>
           </motion.div>
         </div>
       </main>

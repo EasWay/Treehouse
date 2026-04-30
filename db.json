@@ -1,0 +1,71 @@
+{
+  "name": "Treehouse Restaurant",
+  "phone": "059 940 0737",
+  "address": "Plot 1, West Light Industrial Area, Nyaniba, Accra",
+  "website": "https://treehouseaccra.com",
+  "socials": [
+    "https://www.instagram.com/treehousegh",
+    "https://www.facebook.com/treehouseaccra"
+  ],
+  "hours": {
+    "Monday": "12:00 PM - 11:00 PM",
+    "Tuesday": "12:00 PM - 12:00 AM",
+    "Wednesday": "12:00 PM - 12:00 AM",
+    "Thursday": "12:00 PM - 12:00 AM",
+    "Friday": "12:00 PM - 12:00 AM",
+    "Saturday": "12:00 PM - 12:00 AM",
+    "Sunday": "12:00 PM - 11:00 PM"
+  },
+  "images": [
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTWeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=w1200-h800-k-no",
+    "https://lh4.googleusercontent.com/-2wgmPs2uCT8/AAAAAAAAAAI/AAAAAAAAAAA/KNHh6_5cH7E/s1000-p-k-no-ns-nd/photo.jpg"
+  ],
+  "reviews": [
+    "Absolutely amazing atmosphere. The garden setting is a hidden gem in Accra. The lobster was perfectly cooked.",
+    "Best cocktails in Nyaniba! The Afro-fusion menu is experimental and delightful.",
+    "A bit pricey but worth every cedi for the experience and the presentation of the dishes.",
+    "Great place for an intimate date night. The lighting and the staff are exceptional.",
+    "Peaceful and beautiful under the big tree. My steak was cooked perfectly.",
+    "Solid 10/10 from the customer service to the food. Perfect for fine dining."
+  ],
+  "menu": [
+    {
+      "category": "Starters & Small Plates",
+      "items": [
+        {"name": "Pork Belly Starter", "price": "GHS 95"},
+        {"name": "Shrimp Tempura", "price": "GHS 120"},
+        {"name": "Salami Flatbread", "price": "GHS 110"},
+        {"name": "Spicy Gizzard \u0026 Plantain", "price": "GHS 85"}
+      ]
+    },
+    {
+      "category": "Main Course",
+      "items": [
+        {"name": "Ribeye Steak", "price": "GHS 380"},
+        {"name": "Fish Curry", "price": "GHS 180"},
+        {"name": "Beef Teriyaki \u0026 Chinese Noodles", "price": "GHS 240"},
+        {"name": "Tagliatelle Pesto", "price": "GHS 160"},
+        {"name": "Saut\u00e9ed Prawn", "price": "GHS 220"},
+        {"name": "Fish and Chips", "price": "GHS 170"},
+        {"name": "Seafood Platter", "price": "GHS 450"},
+        {"name": "Treehouse Burger", "price": "GHS 140"}
+      ]
+    },
+    {
+      "category": "Desserts",
+      "items": [
+        {"name": "Bread \u0026 Butter Pudding", "price": "GHS 90"},
+        {"name": "Creme Brulee", "price": "GHS 85"},
+        {"name": "Sticky Toffee", "price": "GHS 85"}
+      ]
+    },
+    {
+      "category": "Curated Cocktails",
+      "items": [
+        {"name": "Blueberry Paloma", "price": "GHS 105"},
+        {"name": "Tropical Mocktail", "price": "GHS 75"},
+        {"name": "Champagne Prawn Cocktail", "price": "GHS 115"}
+      ]
+    }
+  ]
+}
