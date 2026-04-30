@@ -1,95 +1,126 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const signatureItems = [
   {
-    name: "Truffle Lobster Mac & Cheese",
-    description: "Maine lobster, aged gruyère, black truffle shaving, toasted herb crust",
-    price: "₵450",
-    dietary: "Seafood"
+    name: "Treehouse Mixed Grill",
+    description: "Assortment of grilled meats: chicken, succulent beef, and spicy pork, served with house-made suya spice",
+    price: "GHS 280",
+    dietary: "Chef's Special",
+    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2670&auto=format&fit=crop"
   },
   {
-    name: "Wagyu Ribeye (8oz)",
-    description: "Charcoal grilled, compound butter, roasted garlic, chimichurri",
-    price: "₵950",
-    dietary: "Gluten-Free"
+    name: "Lobster Thermidor",
+    description: "Creamy lobster baked in shell with mushrooms, herbs, and Gruyere cheese, served with garden salad",
+    price: "GHS 450",
+    dietary: "Premium Seafood",
+    image: "https://images.unsplash.com/photo-1551326844-4df70f78d0e9?q=80&w=2626&auto=format&fit=crop"
   },
   {
-    name: "Smoked Plantain Gnocchi",
-    description: "Hand-rolled gnocchi, wild mushrooms, sage brown butter, parmesan",
-    price: "₵280",
-    dietary: "Vegetarian"
+    name: "Ribeye Steak with Plantain",
+    description: "Tender aged ribeye grilled to order, served with mashed sweet plantains and peppercorn sauce",
+    price: "GHS 380",
+    dietary: "House Favorite",
+    image: "https://images.unsplash.com/photo-1546241072-48010ad28c2c?q=80&w=2574&auto=format&fit=crop"
   },
   {
-    name: "Golden Silk Snapper",
-    description: "Pan-seared local snapper, coconut lemongrass broth, heirloom tomatoes",
-    price: "₵320",
-    dietary: "Seafood"
+    name: "Grilled Prawns with Jollof",
+    description: "Jumbo prawns marinated in garlic and ginger, served with authentic smoky Ghanaian jollof rice",
+    price: "GHS 220",
+    dietary: "Local Fusion",
+    image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2674&auto=format&fit=crop"
   }
 ];
 
-export default function SignatureDishes() {
+interface DishCardProps {
+  item: typeof signatureItems[0];
+  index: number;
+  scrollYProgress: any;
+}
+
+function DishCard({ item, index, scrollYProgress }: DishCardProps) {
+  const imageX = useTransform(scrollYProgress, [0, 1], [-100 + index * 20, 100 - index * 20]);
+
   return (
-    <section id="menu" className="py-32 px-6 md:px-12 bg-tree-charcoal relative">
-      {/* Decorative vertical line */}
-      <div className="absolute top-0 bottom-0 left-6 md:left-12 w-px bg-white/5 hidden lg:block" />
-      
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+    <div className="w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-full relative group shrink-0">
+      <div className="w-full h-full rounded-2xl overflow-hidden relative border border-[#B6915E]/10">
+        <div className="absolute inset-0 bg-[#141414]/40 group-hover:bg-[#141414]/10 transition-colors duration-500 z-10" />
+        <motion.img 
+          style={{ x: imageX }}
+          src={item.image} 
+          alt={item.name} 
+          className="absolute inset-0 w-[120%] h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+        />
+        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#141414] via-[#141414]/80 to-transparent z-20">
+          <span className="inline-block px-3 py-1 mb-4 font-sans text-[10px] uppercase tracking-wider border border-[#F5F1EA]/20 rounded-full text-[#F5F1EA]/60 backdrop-blur-sm">
+            {item.dietary}
+          </span>
+          <h3 className="font-serif text-3xl mb-2 text-[#F5F1EA]">{item.name}</h3>
+          <p className="font-sans text-sm text-[#F5F1EA]/60 mb-4">{item.description}</p>
+          <span className="font-sans tracking-widest text-[#B6915E]">{item.price}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function SignatureDishes() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Pinning and horizontal scroll logic
+  // We make the container wide/tall enough to scroll, and shift the content horizontally.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
+  return (
+    <section id="menu" ref={containerRef} className="h-[400vh] bg-[#141414] relative">
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center">
         
-        {/* Left column: Sticky Title */}
-        <div className="lg:w-1/3 relative">
-          <div className="sticky top-40">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-px bg-tree-brass" />
-              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-tree-brass">Curated Menu</span>
-            </div>
-            <h2 className="font-serif text-4xl leading-tight mb-6">
-              A Symphony of <br/><span className="italic text-white/70">Flavors</span>
-            </h2>
-            <p className="font-sans text-sm text-white/50 leading-relaxed mb-8 max-w-sm">
-              Our culinary philosophy merges global inspiration with refined execution. 
-              Explore a preview of our current seasonal highlights.
-            </p>
-            <button className="font-sans text-xs tracking-[0.1em] uppercase border-b border-tree-brass text-tree-brass pb-1 hover:text-tree-amber hover:border-tree-amber transition-colors">
-              View Full Menu
-            </button>
-          </div>
+        {/* Background ambient lighting */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-[#B6915E] rounded-full blur-[150px]"></div>
         </div>
 
-        {/* Right column: Menu Items */}
-        <div className="lg:w-2/3 flex flex-col gap-12">
-          {signatureItems.map((item, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group border-b border-white/10 pb-8 last:border-0"
-            >
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="font-serif text-2xl group-hover:text-tree-brass transition-colors">{item.name}</h3>
-                <span className="font-sans tracking-wider text-tree-brass">{item.price}</span>
+        {/* Content Wrapper */}
+        <div className="relative z-10 w-full h-full flex flex-col justify-center pt-24">
+          <div className="max-w-7xl mx-auto w-full px-6 md:px-12 mb-12 flex justify-between items-end shrink-0">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-8 h-px bg-[#B6915E]" />
+                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#B6915E]">Curated Menu</span>
               </div>
-              <p className="font-sans text-sm text-white/50 mb-4">{item.description}</p>
-              <span className="inline-block px-3 py-1 font-sans text-[10px] uppercase tracking-wider border border-white/20 rounded-full text-white/40">
-                {item.dietary}
-              </span>
-            </motion.div>
-          ))}
-
-          {/* Chef Note */}
-          <div className="mt-12 p-8 bg-[#1E3328]/20 border border-white/5 rounded-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-6 opacity-10">
-              <span className="font-serif text-8xl">"</span>
+              <h2 className="font-serif text-5xl md:text-7xl font-light leading-tight text-[#F5F1EA]">
+                Symphony of <br/><span className="italic text-[#F5F1EA]/70">Flavors</span>
+              </h2>
             </div>
-            <p className="font-serif italic text-xl leading-relaxed text-white/80 relative z-10 mb-4">
-              "We source our ingredients daily, allowing the seasons to dictate our culinary narrative. 
-              Every dish is an exploration of texture, balance, and memory."
+            <p className="hidden md:block font-sans text-xs tracking-[0.2em] uppercase text-[#F5F1EA]/40 rotate-90 origin-right translate-y-8">
+              Scroll to explore
             </p>
-            <p className="font-sans text-xs tracking-[0.1em] uppercase text-tree-brass">— Executive Chef</p>
           </div>
-        </div>
 
+          <motion.div 
+            style={{ x }} 
+            className="flex gap-8 px-6 md:px-12 w-[400vw] h-[50vh] min-h-[400px] items-center"
+          >
+            {signatureItems.map((item, index) => (
+              <DishCard key={index} item={item} index={index} scrollYProgress={scrollYProgress} />
+            ))}
+            
+            {/* Final Card: Call to action */}
+            <div className="w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-full flex flex-col justify-center items-center text-center px-12 shrink-0 border border-[#B6915E]/20 rounded-2xl bg-[#1E3328]/20 backdrop-blur-sm">
+               <h3 className="font-serif text-4xl mb-6 text-[#F5F1EA]">Discover More</h3>
+               <p className="font-sans text-sm text-[#F5F1EA]/60 mb-8 max-w-sm">
+                 Explore our full culinary offerings, curated wine list, and seasonal specials.
+               </p>
+               <button className="px-8 py-4 font-sans text-xs tracking-[0.1em] uppercase border border-[#B6915E] text-[#B6915E] hover:bg-[#B6915E] hover:text-[#141414] transition-colors rounded-full">
+                 View Full Menu
+               </button>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, Clock, Users, ArrowRight } from 'lucide-react';
 
 interface ReservationModalProps {

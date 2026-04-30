@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/sections/Hero';
 import Story from './components/sections/Story';
@@ -51,14 +52,25 @@ export default function App() {
 
   // Smooth scroll behavior
   useEffect(() => {
-    document.documentElement.style.scrollBehavior = 'smooth';
+    const lenis = new Lenis({
+      lerp: 0.05,
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
     return () => {
-      document.documentElement.style.scrollBehavior = 'auto';
+      lenis.destroy();
     };
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-tree-charcoal text-tree-ivory selection:bg-tree-brass selection:text-tree-charcoal pb-24 md:pb-32">
+    <div className="relative min-h-screen bg-tree-charcoal text-tree-ivory selection:bg-tree-brass selection:text-tree-charcoal pb-24 md:pb-32 bg-noise">
       <Navbar onReserve={() => setIsReservationOpen(true)} />
       
       <main>

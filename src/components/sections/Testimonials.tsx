@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { Star } from 'lucide-react';
 
 const reviews = [
@@ -20,32 +21,44 @@ const reviews = [
 ];
 
 export default function Testimonials() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const cardsY = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
+
   return (
-    <section className="py-32 bg-tree-charcoal">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section ref={ref} className="py-32 bg-[#141414] relative overflow-hidden">
+      <motion.div style={{ y: cardsY }} className="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+         <span className="font-serif text-[40vw] text-[#F5F1EA]/5 select-none align-middle leading-none">"</span>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {reviews.map((rev, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="flex flex-col items-center text-center p-8 bg-[#1E3328]/20 rounded-3xl border border-tree-brass/10"
+              transition={{ duration: 0.8, delay: idx * 0.15 }}
+              className="flex flex-col items-center text-center p-8 bg-[#1E3328]/10 rounded-3xl border border-[#B6915E]/10 shadow-xl backdrop-blur-sm"
             >
-              <div className="flex gap-1 mb-6 text-tree-brass">
+              <div className="flex gap-1 mb-6 text-[#B6915E]">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <p className="font-serif italic text-lg leading-relaxed text-white/80 mb-8 flex-grow">
+              <p className="font-serif italic text-lg leading-relaxed text-[#F5F1EA]/80 mb-8 flex-grow">
                 "{rev.text}"
               </p>
               <div>
-                <span className="font-sans text-xs tracking-widest uppercase text-tree-ivory block mb-1">
+                <span className="font-sans text-xs tracking-widest uppercase text-[#F5F1EA] block mb-1">
                   {rev.author}
                 </span>
-                <span className="font-sans text-[10px] tracking-wider uppercase text-tree-brass/70">
+                <span className="font-sans text-[10px] tracking-wider uppercase text-[#B6915E]/70">
                   {rev.role}
                 </span>
               </div>

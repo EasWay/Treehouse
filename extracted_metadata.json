@@ -1,0 +1,46 @@
+{
+  "name": "Treehouse Restaurant",
+  "phone": "+233 20 891 4333",
+  "address": "Plot 1, West Light Industrial Area, Nyaniba, Accra",
+  "website": "https://treehouseaccra.com",
+  "socials": [
+    "https://www.instagram.com/treehouse_restaurant_accra",
+    "https://www.facebook.com/treehouseaccra"
+  ],
+  "hours": {
+    "Monday": "12:00 PM - 12:00 AM",
+    "Tuesday": "12:00 PM - 12:00 AM",
+    "Wednesday": "12:00 PM - 12:00 AM",
+    "Thursday": "12:00 PM - 12:00 AM",
+    "Friday": "12:00 PM - 2:00 AM",
+    "Saturday": "12:00 PM - 2:00 AM",
+    "Sunday": "12:00 PM - 12:00 AM"
+  },
+  "images": [
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTWeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=w1200-h800-k-no",
+    "https://lh4.googleusercontent.com/-2wgmPs2uCT8/AAAAAAAAAAI/AAAAAAAAAAA/KNHh6_5cH7E/s1000-p-k-no-ns-nd/photo.jpg"
+  ],
+  "reviews": [
+    "Absolutely amazing atmosphere. The garden setting is a hidden gem in Accra. The lobster was perfectly cooked.",
+    "Best cocktails in Nyaniba! The Afro-fusion menu is experimental and delightful.",
+    "A bit pricey but worth every cedi for the experience and the presentation of the dishes.",
+    "Great place for an intimate date night. The lighting and the staff are exceptional."
+  ],
+  "menu": [
+    {
+      "category": "Starters",
+      "items": [
+        {"name": "Spicy Gizzard & Plantain", "price": "GHS 85"},
+        {"name": "Beef Spring Rolls", "price": "GHS 75"}
+      ]
+    },
+    {
+      "category": "Main Course",
+      "items": [
+        {"name": "Lobster Thermidor", "price": "GHS 450"},
+        {"name": "Treehouse Ribeye Steak", "price": "GHS 380"},
+        {"name": "Grilled Prawns with Jollof", "price": "GHS 220"}
+      ]
+    }
+  ]
+}

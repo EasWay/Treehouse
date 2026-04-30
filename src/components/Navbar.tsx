@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useMotionValueEvent } from 'motion/react';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
@@ -98,7 +98,7 @@ export default function Navbar({ onReserve }: NavbarProps) {
               setIsMobileMenuOpen(false);
               onReserve();
             }}
-            className="mt-8 px-8 py-4 font-sans text-sm tracking-[0.1em] uppercase bg-tree-brass text-[#141414] rounded-full"
+            className="mt-8 px-8 py-4 font-sans text-sm tracking-[0.1em] uppercase bg-[#B6915E] text-[#141414] rounded-full"
           >
             Reserve a Table
           </button>
