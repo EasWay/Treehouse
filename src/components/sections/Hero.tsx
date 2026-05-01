@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { AnimatedShinyText } from '../magicui/animated-shiny-text';
 import { ShimmerButton } from '../magicui/shimmer-button';
 import { CoolMode } from '../magicui/cool-mode';
@@ -31,7 +32,7 @@ export default function Hero({ onReserve, data }: HeroProps) {
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 w-full mx-auto text-center">
         <motion.div 
           style={{ y: textY, opacity: textOpacity }}
-          className="space-y-8 flex flex-col items-center"
+          className="space-y-6 md:space-y-8 flex flex-col items-center"
         >
           <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
@@ -39,17 +40,17 @@ export default function Hero({ onReserve, data }: HeroProps) {
              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
              className="relative"
           >
-            <AnimatedShinyText className="mb-4">
-              <span className="text-[#B6915E] uppercase tracking-[0.4em] text-xs font-semibold">
+            <AnimatedShinyText className="mb-2 md:mb-4">
+              <span className="text-[#B6915E] uppercase tracking-[0.4em] text-[10px] md:text-xs font-semibold">
                 {data?.name ? data.name : "Treehouse Restaurant"}
               </span>
             </AnimatedShinyText>
             
-            <div className="h-[40vh] md:h-[60vh] w-screen">
+            <div className="h-[30vh] md:h-[60vh] w-screen">
               <MorphingVideoText
                 src="https://www.shutterstock.com/shutterstock/videos/3956866807/preview/stock-footage-close-view-of-steaming-moelas-in-tomato-sauce-at-a-portuguese-buffet.mp4"
                 texts={["Dine", "Relax", "Escape", "Savor"]}
-                fontSize="20vw"
+                fontSize="25vw"
               />
             </div>
             
@@ -57,7 +58,7 @@ export default function Hero({ onReserve, data }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="text-4xl md:text-6xl font-serif italic text-[#F5F1EA]/80 -mt-12 md:-mt-20 relative z-20"
+              className="text-3xl md:text-6xl font-serif italic text-[#F5F1EA]/80 -mt-8 md:-mt-20 relative z-20"
             >
               Under the Canopy
             </motion.h2>
@@ -67,7 +68,7 @@ export default function Hero({ onReserve, data }: HeroProps) {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1 }}
-             className="text-lg md:text-xl text-[#F5F1EA]/70 leading-relaxed max-w-2xl font-light font-sans"
+             className="text-base md:text-xl text-[#F5F1EA]/70 leading-relaxed max-w-lg md:max-w-2xl font-light font-sans px-4"
           >
             Accra's premier botanical dining escape. A vibrant fusion of culinary excellence and tropical serenity.
           </motion.p>
@@ -76,22 +77,22 @@ export default function Hero({ onReserve, data }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-8 items-center"
+            className="flex flex-col sm:flex-row gap-6 md:gap-8 items-center"
           >
             <CoolMode>
               <ShimmerButton 
                 onClick={onReserve} 
                 background="#B6915E"
                 shimmerColor="#ffffff"
-                className="px-16 py-5 font-bold uppercase text-xs tracking-[0.3em] text-[#141414] hover:scale-105 transition-transform shadow-2xl"
+                className="px-10 md:px-16 py-4 md:py-5 font-bold uppercase text-[10px] md:text-xs tracking-[0.3em] text-[#141414] hover:scale-105 transition-transform shadow-2xl"
               >
                 Reserve a Table
               </ShimmerButton>
             </CoolMode>
-            <a href="#menu" className="group flex items-center gap-4 text-[#F5F1EA] hover:text-[#B6915E] transition-all py-4">
-              <span className="text-xs uppercase tracking-[0.3em] font-semibold">Discover Flavors</span>
-              <div className="w-16 h-[1px] bg-[#B6915E]/40 group-hover:w-24 group-hover:bg-[#B6915E] transition-all duration-500"></div>
-            </a>
+            <Link to="/menu" className="group flex items-center gap-4 text-[#F5F1EA] hover:text-[#B6915E] transition-all py-2 md:py-4">
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-semibold">Discover Flavors</span>
+              <div className="w-12 md:w-16 h-[1px] bg-[#B6915E]/40 group-hover:w-20 md:group-hover:w-24 group-hover:bg-[#B6915E] transition-all duration-500"></div>
+            </Link>
           </motion.div>
         </motion.div>
 

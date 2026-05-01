@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { MagicCard } from '../magicui/magic-card';
 
 const signatureItems = [
@@ -71,7 +72,7 @@ function DishCard({ item, index, scrollYProgress }: DishCardProps) {
 
   return (
     <div 
-      className="w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[32vw] h-[60vh] relative group shrink-0 overflow-hidden rounded-2xl border border-[#B6915E]/20 bg-[#141414] cursor-pointer"
+      className="w-[75vw] sm:w-[60vw] md:w-[45vw] lg:w-[32vw] h-[45vh] md:h-[60vh] relative group shrink-0 overflow-hidden rounded-2xl border border-[#B6915E]/20 bg-[#141414] cursor-pointer"
     >
       {/* Background Image */}
       <motion.div 
@@ -91,12 +92,12 @@ function DishCard({ item, index, scrollYProgress }: DishCardProps) {
       <div className="absolute inset-0 bg-[#141414]/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
       
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-8 z-30">
-        <span className="inline-block px-3 py-1 mb-4 font-sans text-[10px] uppercase tracking-wider border border-[#F5F1EA]/20 rounded-full text-[#F5F1EA]/60 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-30">
+        <span className="inline-block px-3 py-1 mb-3 md:mb-4 font-sans text-[9px] md:text-[10px] uppercase tracking-wider border border-[#F5F1EA]/20 rounded-full text-[#F5F1EA]/60 backdrop-blur-sm">
           {item.dietary}
         </span>
-        <h3 className="font-serif text-3xl mb-2 text-[#F5F1EA]">{item.name}</h3>
-        <p className="font-sans text-sm text-[#F5F1EA]/60 mb-4 line-clamp-2 max-w-[90%]">{item.description}</p>
+        <h3 className="font-serif text-2xl md:text-3xl mb-1 md:mb-2 text-[#F5F1EA]">{item.name}</h3>
+        <p className="font-sans text-xs md:text-sm text-[#F5F1EA]/60 mb-3 md:mb-4 line-clamp-2 max-w-[95%] md:max-w-[90%]">{item.description}</p>
         <span className="font-sans tracking-widest text-[#B6915E] font-medium">{item.price}</span>
       </div>
     </div>
@@ -117,7 +118,7 @@ export default function SignatureDishes({ data }: { data?: any }) {
     image: signatureItems[i % signatureItems.length].image // Fallback images
   })) || signatureItems;
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-82%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 
   return (
     <section id="menu" ref={containerRef} className="h-[600vh] bg-[#141414] relative">
@@ -126,14 +127,14 @@ export default function SignatureDishes({ data }: { data?: any }) {
 
 
         {/* Content Wrapper */}
-        <div className="relative z-10 w-full h-full flex flex-col justify-center pt-24">
-          <div className="max-w-7xl mx-auto w-full px-6 md:px-12 mb-12 flex justify-between items-end shrink-0">
+        <div className="relative z-10 w-full h-full flex flex-col justify-center pt-16 md:pt-24">
+          <div className="max-w-7xl mx-auto w-full px-6 md:px-12 mb-6 md:mb-12 flex justify-between items-end shrink-0">
             <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-8 h-px bg-[#B6915E]" />
-                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#B6915E]">Curated Menu</span>
+              <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-4">
+                <div className="w-5 md:w-8 h-px bg-[#B6915E]" />
+                <span className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] uppercase text-[#B6915E]">Curated Menu</span>
               </div>
-              <h2 className="font-serif text-5xl md:text-7xl font-light leading-tight text-[#F5F1EA]">
+              <h2 className="font-serif text-3xl md:text-7xl font-light leading-tight text-[#F5F1EA]">
                 Symphony of <br/><span className="italic text-[#F5F1EA]/70">Flavors</span>
               </h2>
             </div>
@@ -144,21 +145,21 @@ export default function SignatureDishes({ data }: { data?: any }) {
 
           <motion.div 
             style={{ x }} 
-            className="flex gap-8 px-6 md:px-12 w-max h-[50vh] min-h-[400px] items-center"
+            className="flex gap-6 md:gap-8 px-6 md:px-12 w-max h-[45vh] md:h-[50vh] min-h-[350px] items-center"
           >
             {displayItems.map((item: any, index: number) => (
               <DishCard key={index} item={item} index={index} scrollYProgress={scrollYProgress} />
             ))}
             
             {/* Final Card: Call to action */}
-            <div className="w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-full flex flex-col justify-center items-center text-center px-12 shrink-0 border border-[#B6915E]/20 rounded-2xl bg-[#1E3328]/20 backdrop-blur-sm">
-               <h3 className="font-serif text-4xl mb-6 text-[#F5F1EA]">Discover More</h3>
-               <p className="font-sans text-sm text-[#F5F1EA]/60 mb-8 max-w-sm">
+            <div className="w-[75vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw] h-full flex flex-col justify-center items-center text-center px-8 md:px-12 shrink-0 border border-[#B6915E]/20 rounded-2xl bg-[#1E3328]/20 backdrop-blur-sm">
+               <h3 className="font-serif text-2xl md:text-4xl mb-4 md:mb-6 text-[#F5F1EA]">Discover More</h3>
+               <p className="font-sans text-xs md:text-sm text-[#F5F1EA]/60 mb-6 md:mb-8 max-w-sm">
                  Explore our full culinary offerings, curated wine list, and seasonal specials.
                </p>
-               <button className="px-8 py-4 font-sans text-xs tracking-[0.1em] uppercase border border-[#B6915E] text-[#B6915E] hover:bg-[#B6915E] hover:text-[#141414] transition-colors rounded-full">
+               <Link to="/menu" className="px-6 md:px-8 py-3 md:py-4 font-sans text-[10px] md:text-xs tracking-[0.1em] uppercase border border-[#B6915E] text-[#B6915E] hover:bg-[#B6915E] hover:text-[#141414] transition-colors rounded-full">
                  View Full Menu
-               </button>
+               </Link>
             </div>
           </motion.div>
         </div>

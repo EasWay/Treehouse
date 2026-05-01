@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = 3001;
   const DB_PATH = path.join(process.cwd(), 'db.json');
   const JWT_SECRET = process.env.JWT_SECRET || 'supersecret';
   const ADMIN_PASS = process.env.ADMIN_PASSWORD || 'admin123';

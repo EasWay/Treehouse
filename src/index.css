@@ -88,6 +88,11 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    @apply text-sm md:text-base leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
   }
 }
 
@@ -157,4 +162,25 @@
 .image-mask-oval {
   mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+}
+
+/* Custom Scrollbar for Luxury feel */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(182, 145, 94, 0.2);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(182, 145, 94, 0.4);
+}
+
+@media (max-width: 640px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
 }

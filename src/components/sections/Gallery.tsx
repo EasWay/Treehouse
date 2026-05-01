@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Gallery() {
   const ref = useRef<HTMLElement>(null);
@@ -28,20 +29,20 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" ref={ref} className="py-32 bg-[#141414] overflow-hidden relative">
+    <section id="gallery" ref={ref} className="py-20 md:py-32 bg-[#141414] overflow-hidden relative">
       <div className="absolute inset-0 bg-[#1E3328]/5 z-0" />
       
-      <motion.div style={{ y: headingY }} className="flex flex-col items-center justify-center px-6 md:px-12 mb-20 max-w-7xl mx-auto relative z-10 text-center">
-        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-[#B6915E] block mb-4">See & Be Seen</span>
-        <h2 className="font-serif text-5xl md:text-7xl font-light text-[#F5F1EA]">Atmosphere</h2>
+      <motion.div style={{ y: headingY }} className="flex flex-col items-center justify-center px-6 md:px-12 mb-12 md:mb-20 max-w-7xl mx-auto relative z-10 text-center">
+        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-[#B6915E] block mb-3 md:mb-4">See & Be Seen</span>
+        <h2 className="font-serif text-4xl md:text-7xl font-light text-[#F5F1EA]">Atmosphere</h2>
       </motion.div>
       
-      <div className="flex w-full h-[80vh] overflow-hidden relative z-10 gap-4 px-4 sm:px-8">
+      <div className="flex w-full h-[60vh] md:h-[80vh] overflow-hidden relative z-10 gap-3 md:gap-4 px-4 sm:px-8">
         {[col1Y, col2Y, col3Y, col4Y].map((yVal, i) => (
           <motion.div 
             key={i}
             style={{ y: yVal }}
-            className={`w-1/4 h-[120%] flex flex-col gap-4 ${i % 2 !== 0 ? '-translate-y-24' : 'translate-y-12'}`}
+            className={`w-1/2 md:w-1/4 h-[120%] flex flex-col gap-3 md:gap-4 ${i % 2 !== 0 ? '-translate-y-12 md:-translate-y-24' : 'translate-y-6 md:translate-y-12'} ${i >= 2 ? 'hidden md:flex' : 'flex'}`}
           >
              <div className="w-full h-full relative rounded-2xl overflow-hidden group">
                <div className="absolute inset-0 bg-[#141414]/30 group-hover:bg-transparent transition-colors z-10 duration-700" />
@@ -61,6 +62,15 @@ export default function Gallery() {
              </div>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-24 flex justify-center relative z-20">
+        <Link 
+          to="/gallery"
+          className="px-12 py-5 font-sans text-xs tracking-[0.3em] uppercase border border-[#B6915E] text-[#B6915E] hover:bg-[#B6915E] hover:text-[#141414] transition-all rounded-full"
+        >
+          Explore Full Gallery
+        </Link>
       </div>
     </section>
   );

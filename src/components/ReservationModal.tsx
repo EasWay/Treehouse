@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, Clock, Users, ArrowRight } from 'lucide-react';
 
+/* Custom Scrollbar for Luxury feel */
+const scrollbarStyles = `
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(182, 145, 94, 0.2);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(182, 145, 94, 0.4);
+}
+
+@media (max-width: 640px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
+}
+`;
+
 interface ReservationModalProps {
   onClose: () => void;
 }
@@ -12,6 +35,7 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 sm:px-0">
+      <style>{scrollbarStyles}</style>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,19 +63,19 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
         </div>
 
         {/* Content */}
-        <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar">
+        <div className="p-6 md:p-12 overflow-y-auto custom-scrollbar">
           
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <div className={`w-2 h-2 rounded-full ${step >= 1 ? 'bg-tree-brass' : 'bg-white/20'}`} />
-            <div className={`w-16 h-px ${step >= 2 ? 'bg-tree-brass' : 'bg-white/10'}`} />
-            <div className={`w-2 h-2 rounded-full ${step >= 2 ? 'bg-tree-brass' : 'bg-white/20'}`} />
-            <div className={`w-16 h-px ${step >= 3 ? 'bg-tree-brass' : 'bg-white/10'}`} />
-            <div className={`w-2 h-2 rounded-full ${step >= 3 ? 'bg-tree-brass' : 'bg-white/20'}`} />
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 md:mb-12">
+            <div className={`w-1.5 h-1.5 rounded-full ${step >= 1 ? 'bg-tree-brass' : 'bg-white/20'}`} />
+            <div className={`w-8 md:w-16 h-px ${step >= 2 ? 'bg-tree-brass' : 'bg-white/10'}`} />
+            <div className={`w-1.5 h-1.5 rounded-full ${step >= 2 ? 'bg-tree-brass' : 'bg-white/20'}`} />
+            <div className={`w-8 md:w-16 h-px ${step >= 3 ? 'bg-tree-brass' : 'bg-white/10'}`} />
+            <div className={`w-1.5 h-1.5 rounded-full ${step >= 3 ? 'bg-tree-brass' : 'bg-white/20'}`} />
           </div>
 
           <AnimateStep step={step} currentStep={1}>
-            <div className="space-y-8">
-              <h3 className="font-serif text-3xl font-light text-center mb-8">When will you join us?</h3>
+            <div className="space-y-6 md:space-y-8">
+              <h3 className="font-serif text-2xl md:text-3xl font-light text-center mb-6 md:mb-8">When will you join us?</h3>
               
               <div className="space-y-6">
                 <div>

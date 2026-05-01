@@ -18,10 +18,10 @@ export default function Footer({ onReserve, data }: FooterProps) {
   const footerY = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
 
   return (
-    <motion.footer style={{ y: footerY }} ref={ref} className="bg-[#101010] relative pt-24 pb-12 px-6 md:px-12 border-t border-[#F5F1EA]/5 overflow-hidden">
+    <motion.footer style={{ y: footerY }} ref={ref} className="bg-[#101010] relative pt-16 md:pt-24 pb-8 md:pb-12 px-6 md:px-12 border-t border-[#F5F1EA]/5 overflow-hidden">
       <DottedMap />
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24 relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-16 md:mb-24 relative z-10">
         
         {/* Brand */}
         <div className="lg:col-span-1">

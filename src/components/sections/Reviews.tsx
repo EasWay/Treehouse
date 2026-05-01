@@ -44,31 +44,31 @@ const ReviewCard = ({
   body: string;
 }) => {
   return (
-    <figure className="relative w-80 cursor-pointer overflow-hidden rounded-xl border p-6 border-[#F5F1EA]/10 bg-[#1E3328]/20 hover:bg-[#1E3328]/40 transition-colors">
-      <div className="flex flex-row items-center gap-4">
-        <img className="rounded-full" width="48" height="48" alt="" src={img} />
+    <figure className="relative w-64 md:w-80 cursor-pointer overflow-hidden rounded-xl border p-5 md:p-6 border-[#F5F1EA]/10 bg-[#1E3328]/20 hover:bg-[#1E3328]/40 transition-colors">
+      <div className="flex flex-row items-center gap-3 md:gap-4">
+        <img className="rounded-full w-10 h-10 md:w-12 md:h-12" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-lg font-serif font-medium text-[#F5F1EA]">
+          <figcaption className="text-base md:text-lg font-serif font-medium text-[#F5F1EA]">
             {name}
           </figcaption>
-          <div className="flex text-[#B6915E] text-xs mt-1">
+          <div className="flex text-[#B6915E] text-[10px] md:text-xs mt-1">
             {"★".repeat(5)}
           </div>
         </div>
       </div>
-      <blockquote className="mt-4 text-sm text-[#F5F1EA]/70 leading-relaxed font-sans">{body}</blockquote>
+      <blockquote className="mt-3 md:mt-4 text-xs md:text-sm text-[#F5F1EA]/70 leading-relaxed font-sans">{body}</blockquote>
     </figure>
   );
 };
 
 export default function Reviews() {
   return (
-    <section className="relative w-full py-24 bg-[#141414] overflow-hidden border-t border-[#F5F1EA]/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 text-center">
-        <h2 className="text-4xl md:text-5xl font-serif font-light tracking-wide mb-6">
+    <section className="relative w-full py-16 md:py-24 bg-[#141414] overflow-hidden border-t border-[#F5F1EA]/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-10 md:mb-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-serif font-light tracking-wide mb-4 md:mb-6">
           Whispers from the <span className="text-[#B6915E] italic">Canopy</span>
         </h2>
-        <p className="text-[#F5F1EA]/70 max-w-2xl mx-auto font-sans tracking-wide">
+        <p className="text-[#F5F1EA]/70 text-sm md:text-base max-w-2xl mx-auto font-sans tracking-wide">
           What our guests are saying about their dining experience.
         </p>
       </div>
