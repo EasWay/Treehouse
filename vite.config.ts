@@ -15,6 +15,9 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      sourcemap: false,
+    },
     server: {
       allowedHosts: ["postpositional-susy-slithery.ngrok-free.dev"],
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
