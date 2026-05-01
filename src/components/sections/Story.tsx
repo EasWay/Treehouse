@@ -1,5 +1,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { BlurFade } from '../magicui/blur-fade';
+
+import { PixelImage } from '../magicui/pixel-image';
 
 export default function Story() {
   const ref = useRef<HTMLElement>(null);
@@ -36,12 +39,11 @@ export default function Story() {
               style={{ scale: imgScale, rotateY: imgRotateY, z: imgZ }}
               className="w-full h-full transform-gpu"
             >
-              <div className="absolute inset-0 bg-[#1E3328]/30 z-10 mix-blend-overlay" />
-              <img 
-                src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTWeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=w1200-h800-k-no" 
-                alt="Treehouse Ambience"
-                className="w-full h-full object-cover shadow-2xl"
-                crossOrigin="anonymous"
+              <div className="absolute inset-0 bg-[#1E3328]/30 z-10 mix-blend-overlay pointer-events-none" />
+              <PixelImage 
+                src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTWeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=w1200-h800-k-no"
+                grid="8x8"
+                className="w-full h-full"
               />
             </motion.div>
             
@@ -65,37 +67,47 @@ export default function Story() {
               <span className="font-sans text-xs tracking-[0.2em] uppercase text-[#B6915E] font-medium">Our Philosophy</span>
             </div>
             
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-8 tracking-tight text-[#F5F1EA]">
-              An Oasis <br/>
-              <span className="italic text-[#F5F1EA]/70">Above</span> The City
-            </h2>
+            <BlurFade delay={0.25} inView>
+              <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-8 tracking-tight text-[#F5F1EA]">
+                An Oasis <br/>
+                <span className="italic text-[#F5F1EA]/70">Above</span> The City
+              </h2>
+            </BlurFade>
             
             <div className="font-sans text-sm md:text-base leading-relaxed text-[#F5F1EA]/60 space-y-6 font-light">
-              <p>
-                Nestled within the vibrant heart of Accra, Treehouse is more than a restaurant—it's an immersive 
-                escape. We've curated an environment where the boundaries between indoor luxury and outdoor serenity blur.
-              </p>
-              <p>
-                Surrounded by verdant foliage and illuminated by warm, cascading lights, every corner is designed 
-                to evoke a sense of quiet exclusivity. Our menu offers a sophisticated take on international cuisine, 
-                blending bold, familiar flavors with elegant presentation.
-              </p>
-              <p>
-                Whether it is an intimate date night or a lively weekend gathering, Treehouse provides the perfect 
-                backdrop for unforgettable evenings.
-              </p>
+              <BlurFade delay={0.25 * 2} inView>
+                <p>
+                  Nestled within the vibrant heart of Accra, Treehouse is more than a restaurant—it's an immersive 
+                  escape. We've curated an environment where the boundaries between indoor luxury and outdoor serenity blur.
+                </p>
+              </BlurFade>
+              <BlurFade delay={0.25 * 3} inView>
+                <p>
+                  Surrounded by verdant foliage and illuminated by warm, cascading lights, every corner is designed 
+                  to evoke a sense of quiet exclusivity. Our menu offers a sophisticated take on international cuisine, 
+                  blending bold, familiar flavors with elegant presentation.
+                </p>
+              </BlurFade>
+              <BlurFade delay={0.25 * 4} inView>
+                <p>
+                  Whether it is an intimate date night or a lively weekend gathering, Treehouse provides the perfect 
+                  backdrop for unforgettable evenings.
+                </p>
+              </BlurFade>
             </div>
 
             <div className="mt-12 flex items-center gap-8">
-              <div className="flex flex-col">
+              <BlurFade delay={0.25 * 5} inView className="flex flex-col">
                 <span className="font-serif text-3xl text-[#F5F1EA] mb-1 italic">Evening</span>
                 <span className="font-sans text-[10px] tracking-widest uppercase text-[#F5F1EA]/40">Atmosphere</span>
-              </div>
-              <div className="w-px h-12 bg-white/10" />
-              <div className="flex flex-col">
+              </BlurFade>
+              <BlurFade delay={0.25 * 5.5} inView>
+                <div className="w-px h-12 bg-white/10" />
+              </BlurFade>
+              <BlurFade delay={0.25 * 6} inView className="flex flex-col">
                 <span className="font-serif text-3xl text-[#F5F1EA] mb-1 italic">Global</span>
                 <span className="font-sans text-[10px] tracking-widest uppercase text-[#F5F1EA]/40">Cuisine</span>
-              </div>
+              </BlurFade>
             </div>
           </motion.div>
 

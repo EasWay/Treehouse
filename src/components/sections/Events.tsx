@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { BorderBeam } from '../magicui/border-beam';
 
 const events = [
   {
@@ -7,21 +8,21 @@ const events = [
     title: "Acoustic & Wine",
     desc: "Unwind with live acoustic sets and half-priced select wines. The perfect preamble to the weekend.",
     time: "7:00 PM - 10:00 PM",
-    image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=2664&auto=format&fit=crop"
+    image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH4M_4C0DfN9k-sIxROovYz8J_jAoO9PwOvLcVPeLb3NF8BAmgqiLmf7hJfhvr9U0Aly0OZaWLLT6UdwPjWH2wfpgWoxgw4IcxQATBuJVL8HDZtZquMHaEkntVCBF8wX4D2Z7J_Kw=w640-h640-n-k-no"
   },
   {
     day: "Fridays",
     title: "Twilight Sessions",
     desc: "Our resident DJ blends deep house with Afro-lounge beats as the evening transitions to night.",
     time: "8:00 PM - Late",
-    image: "https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?q=80&w=2664&auto=format&fit=crop"
+    image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-lMYlrpIVOz-BnUoJOMUbnas35YjOenbtOw93cYY2NTFd61sdEBxJ6HqGVL4FsCUYJ5FNKRzJ4T62oExsb8MtTMuDBGgSMbinDqFU3ImbRxC6VuYr2Cc1FNXsrz0VQEo3t3XyaA=w640-h640-n-k-no"
   },
   {
     day: "Sundays",
     title: "Botany Brunch",
     desc: "An extended daytime affair featuring bottomless mimosas, live sax, and a curated brunch menu.",
     time: "11:00 AM - 4:00 PM",
-    image: "https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=2670&auto=format&fit=crop"
+    image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGXtcoDXPLXUDqzIr9KO0NEbg7UgbrySVAlE_roMc-MDMp7vnzgMuaDtI-G5RbNhi2R1KKtiGVLwOOaWGxcjJNwa_4SKvFkHEHY2q52XchhDGGynoPYqwKQRz6HeAhma6HuyG-5=w640-h640-n-k-no"
   }
 ];
 
@@ -89,6 +90,8 @@ const EventCard: React.FC<{ evt: any, idx: number }> = ({ evt, idx }) => {
     >
       <div className="absolute inset-0 bg-[#141414]/60 group-hover:bg-[#141414]/30 transition-colors duration-700 z-10" />
       <img src={evt.image} alt={evt.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" />
+      
+      <BorderBeam size={250} duration={12} delay={9} colorFrom="#B6915E" colorTo="rgba(182, 145, 94, 0)" className="z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       
       <div className="relative z-20 h-full p-8 flex flex-col justify-end">
         <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#B6915E] mb-4 block translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

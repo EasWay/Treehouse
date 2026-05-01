@@ -3,9 +3,12 @@ import MainSite from './MainSite';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
 
+import { SmoothCursor } from './components/magicui/smooth-cursor';
+
 export default function App() {
   return (
     <Router>
+      <SmoothCursor />
       <Routes>
         <Route path="/" element={<MainSite />} />
         <Route path="/admin" element={<AdminDashboard />} />

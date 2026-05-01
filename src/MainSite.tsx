@@ -1,64 +1,69 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
-import { Utensils } from 'lucide-react';
+import { Utensils, CalendarDays, MapPin, Phone, Music, Shirt } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/sections/Hero';
 import Story from './components/sections/Story';
 import SignatureDishes from './components/sections/SignatureDishes';
 import Gallery from './components/sections/Gallery';
 import Events from './components/sections/Events';
-import Testimonials from './components/sections/Testimonials';
+import Reviews from './components/sections/Reviews';
 import Footer from './components/sections/Footer';
 import ReservationModal from './components/ReservationModal';
 import MenuSidebar from './components/MenuSidebar';
 import { getRestaurantData, RestaurantData } from './services/dataService';
+import { CoolMode } from './components/magicui/cool-mode';
+import { Dock, DockIcon, DockSeparator } from './components/magicui/dock';
 
 function FloatingMenuButton({ onClick }: { onClick: () => void }) {
   return (
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      onClick={onClick}
-      className="fixed right-6 top-1/2 -translate-y-1/2 z-40 w-14 h-14 bg-[#B6915E] text-[#141414] rounded-full shadow-2xl flex items-center justify-center border-4 border-[#141414]"
-      title="View Menu"
-    >
-      <Utensils className="w-6 h-6" />
-    </motion.button>
+    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40">
+      <CoolMode>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={onClick}
+          className="w-14 h-14 bg-[#B6915E] text-[#141414] rounded-full shadow-2xl flex items-center justify-center border-4 border-[#141414]"
+          title="View Menu"
+        >
+          <Utensils className="w-6 h-6" />
+        </motion.button>
+      </CoolMode>
+    </div>
   );
 }
 
 function StickyBottomBar({ onReserve }: { onReserve: () => void }) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#1E3328] border-t border-[#B6915E]/30 px-6 md:px-12 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div className="hidden md:flex gap-12 items-center">
-        <div className="flex flex-col text-tree-ivory">
-          <span className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Live Music</span>
-          <span className="text-sm font-medium">Jazz & Afrobeat Duo — 8PM</span>
-        </div>
-        <div className="w-[1px] h-8 bg-[#B6915E]/20"></div>
-        <div className="flex flex-col text-tree-ivory">
-          <span className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Dress Code</span>
-          <span className="text-sm font-medium">Elegant Casual</span>
-        </div>
-      </div>
+    <div className="fixed bottom-6 left-0 right-0 z-40 flex justify-center pointer-events-none">
+      <div className="pointer-events-auto">
+        <Dock distance={140} magnification={50}>
+          <DockIcon label="Live Music (8PM)" onClick={() => window.location.hash = "#events"}>
+            <Music className="w-5 h-5" />
+          </DockIcon>
+          <DockIcon label="Dress Code" onClick={() => window.location.hash = "#footer"}>
+            <Shirt className="w-5 h-5" />
+          </DockIcon>
+          <DockIcon label="View Menu" onClick={() => {
+            const menuBtn = document.querySelector('button[title="View Menu"]') as HTMLButtonElement;
+            if (menuBtn) menuBtn.click();
+          }}>
+            <Utensils className="w-5 h-5" />
+          </DockIcon>
+          
+          <DockSeparator />
 
-      <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
-        <div className="hidden sm:flex items-center gap-4">
-          <div className="flex -space-x-2">
-            <div className="w-8 h-8 rounded-full border-2 border-[#1E3328] bg-gray-400"></div>
-            <div className="w-8 h-8 rounded-full border-2 border-[#1E3328] bg-gray-500"></div>
-            <div className="w-8 h-8 rounded-full border-2 border-[#1E3328] bg-gray-600"></div>
-            <div className="w-8 h-8 rounded-full border-2 border-[#1E3328] bg-[#B6915E] flex items-center justify-center text-[10px] font-bold text-tree-ivory">+12</div>
-          </div>
-          <p className="text-xs opacity-60 text-tree-ivory">12 Guests Booking Now</p>
-        </div>
-        <button 
-          onClick={onReserve}
-          className="w-full sm:w-auto px-10 py-4 bg-[#B6915E] text-[#141414] font-bold uppercase text-xs tracking-[0.2em] shadow-lg shadow-[#B6915E]/20 hover:scale-105 transition-transform"
-        >
-          Reserve a Table
-        </button>
+          <DockIcon label="Reservations" onClick={onReserve}>
+            <CalendarDays className="w-5 h-5" />
+          </DockIcon>
+          <DockIcon label="Location" onClick={() => window.open("https://maps.app.goo.gl/ffXgKPvFvyK4BjrS6", "_blank")}>
+            <MapPin className="w-5 h-5" />
+          </DockIcon>
+          <DockIcon label="Concierge" onClick={() => window.location.href = "tel:+233208914333"}>
+            <Phone className="w-5 h-5" />
+          </DockIcon>
+        </Dock>
       </div>
     </div>
   );
@@ -100,7 +105,9 @@ export default function MainSite() {
         <SignatureDishes data={data} />
         <Gallery />
         <Events />
-        <Testimonials data={data} />
+        <div id="reviews">
+          <Reviews />
+        </div>
       </main>
 
       <Footer onReserve={() => setIsReservationOpen(true)} data={data} />

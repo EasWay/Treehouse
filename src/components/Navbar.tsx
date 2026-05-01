@@ -29,14 +29,20 @@ export default function Navbar({ onReserve, data }: NavbarProps) {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-[#F5F1EA]/10 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-[#F5F1EA]/10 overflow-hidden ${
           isScrolled ? 'bg-[#141414]/90 backdrop-blur-md py-6' : 'bg-transparent py-8'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between w-full">
+        {/* Green Ambience */}
+        <div className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute top-[-100%] left-[10%] w-[30%] h-[300%] bg-[#1E3328] rounded-full blur-[40px] opacity-80"></div>
+          <div className="absolute top-[-100%] right-[20%] w-[20%] h-[300%] bg-[#1E3328] rounded-full blur-[40px] opacity-60"></div>
+        </div>
+
+        <div className="relative z-10 w-full px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-12">
-            <a href="#" className="font-serif text-2xl tracking-widest uppercase font-bold text-[#B6915E]">
-              {data?.name || "Treehouse"}
+            <a href="#" className="flex items-center">
+              <img src="/logo.png" alt="Treehouse Logo" className="h-16 w-auto object-contain" />
             </a>
             <div className="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] font-medium opacity-70">
               {navLinks.map((link) => (
@@ -78,7 +84,7 @@ export default function Navbar({ onReserve, data }: NavbarProps) {
         data-open={isMobileMenuOpen}
       >
         <div className="p-6 flex justify-between items-center border-b border-[#F5F1EA]/10">
-          <span className="font-serif text-2xl tracking-widest uppercase font-bold text-[#B6915E]">TREEHOUSE</span>
+          <img src="/logo.png" alt="Treehouse Logo" className="h-16 w-auto object-contain" />
           <button onClick={() => setIsMobileMenuOpen(false)}>
             <X className="w-8 h-8 opacity-70 hover:opacity-100" />
           </button>

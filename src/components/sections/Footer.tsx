@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { RestaurantData } from '../../services/dataService';
+import { DottedMap } from '../magicui/dotted-map';
 
 interface FooterProps {
   onReserve: () => void;
@@ -17,8 +18,10 @@ export default function Footer({ onReserve, data }: FooterProps) {
   const footerY = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
 
   return (
-    <motion.footer style={{ y: footerY }} ref={ref} className="bg-[#101010] pt-24 pb-12 px-6 md:px-12 border-t border-[#F5F1EA]/5">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+    <motion.footer style={{ y: footerY }} ref={ref} className="bg-[#101010] relative pt-24 pb-12 px-6 md:px-12 border-t border-[#F5F1EA]/5 overflow-hidden">
+      <DottedMap />
+      
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24 relative z-10">
         
         {/* Brand */}
         <div className="lg:col-span-1">
@@ -83,7 +86,7 @@ export default function Footer({ onReserve, data }: FooterProps) {
 
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#F5F1EA]/10 text-[#F5F1EA]/30 font-sans text-xs tracking-wider">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#F5F1EA]/10 text-[#F5F1EA]/30 font-sans text-xs tracking-wider relative z-10">
         <p>&copy; {new Date().getFullYear()} {data?.name || 'Treehouse Restaurant'}. All Rights Reserved.</p>
         <div className="flex gap-6 mt-4 md:mt-0">
           <a href={data?.socials[0] || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F1EA] transition-colors">Instagram</a>

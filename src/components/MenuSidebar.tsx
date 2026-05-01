@@ -32,6 +32,7 @@ export default function MenuSidebar({ isOpen, onClose, menu }: MenuSidebarProps)
             exit={{ x: '100%' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="fixed top-0 right-0 h-full w-full max-w-md bg-[#1E3328] z-[70] shadow-2xl overflow-y-auto border-l border-[#B6915E]/20"
+            data-lenis-prevent
           >
             <div className="p-8 md:p-12">
               <div className="flex justify-between items-center mb-12">
