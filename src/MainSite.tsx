@@ -34,7 +34,21 @@ function FloatingMenuButton({ onClick }: { onClick: () => void }) {
   );
 }
 
+function PreviewWatermark() {
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden select-none opacity-[0.03]">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] whitespace-nowrap text-[10vw] font-black uppercase tracking-[0.5em] text-white">
+        Development Preview • Not for Production • Development Preview • Not for Production
+      </div>
+    </div>
+  );
+}
+
 function StickyBottomBar({ onReserve }: { onReserve: () => void }) {
+  const handleReserve = () => {
+    alert("This is a Development Preview. Reservation functionality will be enabled upon final project release.");
+  };
+
   return (
     <div className="fixed bottom-6 left-0 right-0 z-40 flex justify-center pointer-events-none">
       <div className="pointer-events-auto">
@@ -54,7 +68,7 @@ function StickyBottomBar({ onReserve }: { onReserve: () => void }) {
           
           <DockSeparator />
 
-          <DockIcon label="Reservations" onClick={onReserve}>
+          <DockIcon label="Reservations" onClick={handleReserve}>
             <CalendarDays className="w-5 h-5" />
           </DockIcon>
           <DockIcon label="Location" onClick={() => window.open("https://maps.app.goo.gl/ffXgKPvFvyK4BjrS6", "_blank")}>
@@ -95,9 +109,14 @@ export default function MainSite() {
     };
   }, []);
 
+  const handleInquiry = () => {
+    alert("This is a Development Preview. Inquiry functionality will be activated upon project handover.");
+  };
+
   return (
     <div className="relative min-h-screen bg-tree-charcoal text-tree-ivory selection:bg-tree-brass selection:text-tree-charcoal pb-24 md:pb-32 bg-noise">
-      <Navbar onReserve={() => setIsReservationOpen(true)} data={data} />
+      <PreviewWatermark />
+      <Navbar onReserve={handleInquiry} data={data} />
       
       <main>
         <Hero onReserve={() => setIsReservationOpen(true)} data={data} />
