@@ -16,9 +16,67 @@
     "Saturday": "12:00 PM - 12:00 AM",
     "Sunday": "12:00 PM - 11:00 PM"
   },
+  "story": "Treehouse Restaurant is a hidden gem nestled in the heart of Nyaniba, Accra. What began as a dream to create a botanical escape in the urban bustle has evolved into a premier destination for fine dining and Afro-fusion culinary art.\n\nOur menu is a celebration of local ingredients reimagined through modern techniques. Every dish tells a story of heritage, innovation, and passion.\n\nSurrounded by lush greenery and the gentle whispers of the garden, Treehouse offers an immersive experience that engages all your senses. Whether it's an intimate date night or a vibrant celebration with friends, we provide the perfect canopy for your most cherished moments.",
   "images": [
-    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTWeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=w1200-h800-k-no",
-    "https://lh4.googleusercontent.com/-2wgmPs2uCT8/AAAAAAAAAAI/AAAAAAAAAAA/KNHh6_5cH7E/s1000-p-k-no-ns-nd/photo.jpg"
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTWeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=s2000"
+  ],
+  "gallery": [
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpohZ1i6ca4eSWrVDrLfXUlMkiuUKhdG4q6Cr89rdTDuZh5wrmzbFBXU3AaSnpQhZnfQztTHeHh5kMYt_YuuiDtx9oxrb70eMP9QZTAKc83BBJlc-VgAc9YJGkaXZvyGRS4DBCcPbrJWS9=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFh7F4lE9GrNSrIAJHTN5eRUJLBd4qOp1MxKdYSGWOsk9SCf3dW_KzKlc5Vqmd9Z__G7rDFfpWH_WNS_TRpLrI5Ux3xxCunN1xbSm1F6gyAdPjDy8IiXyrbfXonYjpj5FOhbCE=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUYT-og9AvFLoI1_1sZ1t-6Or0Zk_-9qIx0r0PfS2VY3lw46YdM_Kfgtsp7qg9_-gY7MRm-huak3suJJ9ZaorwvOVJzT5X9g30l1oQkfyHMclykwYBFD5_vK0tvEiiaHA37UfdQ26_OYY=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfV8ySfLvPzUF_cNEn3vKk5BN2wVOR-_fXaH5D0NgggJ_MabIwTnXV_BDzqQTE1fC9JEWIejzgFbsPWXX1WKM0yo0UF6ITQARNsI880AnBE0bnOxIz-ochsv8bhWnB6maesqdbnw=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfKbsYyjL_qI53L8cZXocHovgNhNeJT25_Zm6Dxl8SX0tSyC7b0Y4meDoXBa00EGWw3YHmoJZdcGY_xSo62BbipCxUmY6qIqEVNcT6jHSQJwhJz4b0DPnHLJK1O6aoWXdaBHA=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGB1_7iwrPaOO7f70QK120J6AoPU2LUDaSFk8Ty06xRnY5rVacJyKkNmP1bxxZtLdn4tbfqtyfSC7fYYDvk75TmdvEW9g0i_1JJUpOscZ0M9N0Q6ZPuMYxpjz0sKzkYIjsisVgZ=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1e4x-Irp9azBnrAnklIuiV16U1Z5jXnWu1oHO1qkwvnQv_VM8OAq4wELyNWqVnViR0DZWRTGohR_BgX6ZUZM3g9rP7WSrQY8yJbhc2pKN1uTo10CJcsDymDwtowihy0kB9TdA=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGFNXRCbV65ZAB-BKxwm646ZLOLLhDOpuihcMsSfHcI6LYXY6o8_gFSJh4E3joWkxG4Bf2dw5vutfr3Lv3bo_81GZ1347LhN00LSdPvmCxEgFYErO0RnezRaSTMZQpjytGTHNN5=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH4M_4C0DfN9k-sIxROovYz8J_jAoO9PwOvLcVPeLb3NF8BAmgqiLmf7hJfhvr9U0Aly0OZaWLLT6UdwPjWH2wfpgWoxgw4IcxQATBuJVL8HDZtZquMHaEkntVCBF8wX4D2Z7J_Kw=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-lMYlrpIVOz-BnUoJOMUbnas35YjOenbtOw93cYY2NTFd61sdEBxJ6HqGVL4FsCUYJ5FNKRzJ4T62oExsb8MtTMuDBGgSMbinDqFU3ImbRxC6VuYr2Cc1FNXsrz0VQEo3t3XyaA=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGXtcoDXPLXUDqzIr9KO0NEbg7UgbrySVAlE_roMc-MDMp7vnzgMuaDtI-G5RbNhi2R1KKtiGVLwOOaWGxcjJNwa_4SKvFkHEHY2q52XchhDGGynoPYqwKQRz6HeAhma6HuyG-5=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEuuAY5xiGnBHUX7sv3_f0kVU-cNokS_cS_J3HTcZseZgJEibTovQ8IT98rWs0Szp8s7vpTnx_bhfgE6VDzU_L3VkI-RVgWgrkT636nt5drXl3WtmEov5YNxZ71_odNCN7t0EJY=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnTQ4INIzKlxPffW59yTMaZN5v718HG_COBMwIxiLgYBzKH5QXlhvejDlxrfMfQCPERryOWd_AbMyrMEzqHl9oa42As8rzi-mwjgM5rZIvp5Tn4uuCNXV8Np9GQSV5Q5GqM7HX=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEIgi2MeXGztIVg6f-QfnuZWQ0Ae3F_bH0KRpZRyWQvJq-rDFGYaerzV6kSEJ9z6hK3QI2rTG-y56xSbXNYtxlcnlEeUDk2M3l8h7EWEh8CyHsy73-BdSgJh_6ve-dn80iXoMqr=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3KX94xcxIG92uD_TT-F307M5_WhCtB-3ebtgOelqRTQT-S92TIQyTSIkHOOtpZLJ2sLVC-SflPx7ksPbi6phnzS7oycLOSoNx8dGUkukjKqPhKgJpNGqvYTuf043sYWQxh026cA=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxD9dXq51qfbrclkNoAYM3nTz26d98eapS0gHgjyBLXcsCBXrD6Wt1E8e8hHF5dEFf8bACgbiN-dmujOi4VNFk7RbX0LZ-avLDqFqbaHHUoe9YYUXKhdTSoz7e05NwDFsH0u_YdA=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG3Lh2VV8Ep_yz_2RurjWYS81SX0v6w-ut4pSD4z7ojDn8l8Ct4sgI_BU5EAVSQ8dxHUnrkghEQAlrXexuKfqu_1liIUYrVyUmUcGxPZC2GlxKXNpWvGXJSrMzXEEHWhZQbDxdmww=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6ZAuN9BnA3enPT6YZVKls_BwtVbmJEDlyl8Fa0_MDBBhyumHv9uTfV8usicxUciFMgG-lgtviqunPag-L4Ri9LUMjHAWn0K6y0XK8t2TdQ3TZdWFlUIXtczW7SYREFtbdlQc=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLZF7YZlJ5vqivCtT8KPFtfTbLZRbaKvfsa_ELbgbfaSM6f1-njwQ7DSpzjSMGCNzOAr_LlYpHIWX_207CWRy56v60nQJWOVk3dw0uyj1JZRVEjTgv8JhJR9yqD7lVhFe_vNN1=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBrzyoUe4KQcOiBwuUD1IV2xiwMSemYR5DL4wzCUBbi6HS1UHzihH0nnobRdyDIcNUKRICHKSzJWFvLfFLAUpaIBBbOXBJrn2yEMDr39U6_yX4IS3jTZ4tNXA0qciTMnXmORGuUw=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAElCaADgnKPSS1bqRQaHqgB4SbfLXP31B9Krc6sPSww258mSzeLBzQxB7U3XCswFAzxqK9lty-0ZPiCy8IdHHOh1jvYqOx2miQJw7CGiWXBV3xiIFYZNR8yNppN3LG8998RxwZJJg=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFFtGUkCQYqeiiTnf5YZTq3zXToRvG6eS4TUjxZkcsw44BVfFb2i1EJIuqsIHU-JZD2LqHAx8HLQ8UESZsM3kcYyS8PZTgBcTxPXcXO0CLgrlU9uLrW2qlkFX-jbRQiIL5LK0VW=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJ8wtoCrMdPkrAXowSIi0p3IoEMDk4sAqscbCfSdgO2VNg8OziVvjI3e1c1nz6oOFHuhKOVzAn3aqrEaAeDusKjKPekPOXjo-2zXSBvOSaZXe2l_lD8HsNCAC68FCJcNDxIWn2Wg=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEF55WVOw5Btpl2LUk_pDf6Z8F-QMBfVVSy3T_jkXhC6HOsDu4JQdolvIx9wxcFLHOtxeOAE3JLhKBe5cGr1xpWT6wxHxx_mjiH8CQHaM9aVmwhVxGL0vW787HFV5N_tf_U65t4=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6JB47SOZuDuO7IW7Sj57RxrZ83yOMAgRBuDQcWtKsUfObKgDPVWoyIeLOXgR0GB5ctKpWVVmzhgl4X4Wu8btVZpMFiCleaBPtgB3WJnEuPYlEy05cbtLA_EQ0mWRqUlXgO-KtOpNfsyUn=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHK_BYBz6kWDmVq921qOzY9Vb9DKH2gEKC8-iU0zgeu_q3yMBBka6fgPkbCS--SfC02yunlL8A2_3sebmVqQlLO_tqoiyGDbu0iUC2f0HaYlutrgiIoMYo0fSx5AuFszmVNzazYKDiaDkg7=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFy3ZkaQDWcVGMQw-5IXu1_u6r2jVdiFenTxz-8YhC1-g8eR0nSu5NgvCaQLzkzaZ6KAU8wV7BXmxlWshnVaKYYunr25oo_NP1dPejh7JAEkQvYpXDG6jToMuQ77jKBXtSqHxZPd7-nMnyn=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGcU2FOTJjKp8zj9E4fbSRE9iVSAbg4b-bWKlejdbyJF9hIDYnIbHU167SFQIB_FYkhDOzb9B_DG1wRUV_YYzMwVk2lgEUKHugOgUXevyBqzIRlVQJCHFWId8g3shxkUMwAwg-E0fONJ6l1=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFjdTREgyjA8ydZk_jokq5fXkSFzzayxUgTo1PLSedM0oM379mFqSZP0sw7DunLonQ6hPOrhgUDqTNgrX1PqFKpwBnGmjTWmU4e2AyYVJaz-pZeYF7yZ9NXi_soNcFyKQJ3rTKm=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH9Bwt2a2KYg8JHRhWNfneG6gIjzhWd0sWcuA25edsjAUar0JJDpGcet69smH_dVFrX0hXb1KR-6yAZjyr4CgFpfYObfv13xiio90_nkAJ8-Mv1gsWG2Zk3GXRpSYWuQQQHdSOW=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQUVfMrlD8tQ5UlaOIzwJghh0tTX_YASEW-Dx09AyW3ciddfTU9bKEI6Uz_QzNbkpJVmXOnMa-14AZNjAbnQT1ydTayTII9t4MdhRO8_CA8oHKc-WcQOoqtp2OqXYs_8JPvirGQzUSfI5L=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFJ9dC7s2PM-X5VuiNtm2wUurU3maLqwwP9ZbR6269YECPlG9aV0wx8HV7rUR0Y76fzvYfCKRlNZKmoY5L-WuIXF6SpW6LeXpO6Lbe9QbID1DiflAsflOHwOe8pCmdsZSakeQwp=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZ6N6fkOw6rWuFNbYivzMT41NlX-SQRK6bK4LWPcfSeZdVMk6IBrgaZAwSRxw1pbNiDtf58yE675r_b899xwdwbL4qRo4LaHaWXC7yA9djO5I00ddtVNDlWAb_oWVEFRP0RbY=s2000",
+    "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=cl-LRzKM8xcd0CGEQKtJ9Q&cb_client=geo_services_immersive.gps&w=200&h=200&yaw=256.27347&pitch=0&thumbfov=100",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbwZIHHi9VPebro___y3a3dFn8XtQ0M2T1w39nOr6jjsh1_vjAZ0pgxEraqqHBr1zMWXXDUTeCxX5U2FUYo0iqa9hnFP5znNBJEwXhRL_yBoySsAI_Gmj_nzxsoto_UR-2NKpS=s2000",
+    "https://lh3.googleusercontent.com/p/AF1QipN0S3cLYdnpYvqQrszdXujq2jMqrpgrllDOIuwg=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFI3J5_xJ9z2e34natufPN064133TCEEdEPK38PLHWNmu0Koq1vVmt2OMUSCxgRnpoSS-Y4kkb1cTqv3UMXnDtt8w-00b4egoORMak_y0FG2XRxKsuyREs5ocNzw50rDNjB1SiCrg=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH4KNuFx7bz-OKKu7Q6-2y_HG1sYrJjViZ82Uttel27kUvm9kDFGuJiJIvZagKFrKJy5Fd8NTyZz4jRwuuCS8tb9l0eaJxwDV-d3Wd22Cn5g2-2Tnmqd862GXkMt6gMf1OqUWg_qVAN112A=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHGxMxmU5uA5w7px1mTVV52O83mEnaEfoM9miMQYKqCI0mWQWm3isy1PhWDnjLZdM2rgQU___1N8c5DEg6a3OYVPCKHHd2waV_Ct3ID1cRPa4OU1X38MtdJVHCM2JH3HTbrE35c=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEM_bQZJWLcS4tlWNTrgNOLuB7iNjNiPxes8HWoRVsLaqVY_LjpNHL6mEUDypoJIrINfEowDqDg_riPtLStelsoJVZO2gBtOJs28Pg_HhiTnhFARqr6kJaBLXgEyxHg7aActLek-DTiN1Xg=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3c_FpjGbCxWjO82Xlsgna5XHtPES8OphGOytpW8LrFe4TSNc_z5oPWl-qd0oG0Q0Ywh9p_7vExJUX8rnVibJvPVbyAaFL4FQbKs1mexx-ZYmVi0YdwIyey_uRj7EAk49d2YjuKSo4tseR=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGWLEB3dokLjnNmkmg0T9pgQSeirCh1gi1GYhL4Vl3_5t3854LvDx6lJIe8XwchKE2OqHtGBwZ3ajtOZPl9Rj5TjhJyXTgIjInPiVeF1Uy2rCamd---D5VVoLyn7skDLFHxRnWL1w=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNzrOv784Yzp-eZQVOwMOC9rI8GussYx_5vdycbJVADpz95G_cTi0DpyBGnLbKTYaQX6jRlNyNBLkfsZeBcPNcl-D9jTxrtbdirTVuJXFyUSLVgfFJcU2KJXTbFsMlmhPa5tUbTENFPJBK=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTI47W0CibqAGzqmeuDliSDVEdKLoiDlTDC4t1VoEZZehp-PZbz1UdvXTjtiMdGjP_yRtGthQcrClTH2vCNaA7GDZK13kJEtPIAHVRg2Pvx44QrZNUpywgGV6vuFBvo7_t-GVUhA=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHxNP2egVHOWdjNrlGzkOg-QuAiEVoppja84xXDeJq3LhazDAkM8p91eiAADk-rLTpuKewq8oGs4rdamdDmmjzlaLAsOhDnI9ttJOCmvU6N18kNmiWmYN7c1nDinUX2VpWvz34HfehbpQl-=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtq7pcQMVhzprIVQTCsqHieQU-hKMeM7O55Ef1RA6m6GK20yZ_7ryvKfpDnoIs_nYrypHJgw9_POWIei9Z_Nf-VQcsXLjGZupHpRUCT3Al1Zjeck1w0s21Y7WyMvtDU35fAVdzOYACk5AP=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGvS6uuT7nqacVnt7T3-Ck0go2Ej1oeGQxJuaBj4Qmucqt3mtSSg9qnqn_C6vvkR2yvcAMOc0a0vUganyayVUTM5XEu_1lyvOX_EYe73LCkqrlMIH-QfjFoFCF3dp1uNlLkQDaE=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEv7cly6XWc5RhPaXu-ZlkqlSoFbiHKsRrz5t9FKcfRzuMKHAjYDRSCeC1AuzsUtzvgHPFxN4FabepPberJ6tjO6jAC3og-TGgITqL9nUB5svAWaf-tC0kFdM5Vql-R9D0hH67n=s2000",
+    "https://lh3.googleusercontent.com/p/AF1QipOWlwUWJLpZ0eHs5vtg_Wlc-zaHX3xcx7-ROPYU=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGwbiCC_OETfXalEtnOZlSlqG-bBSHPkvvb0ARmMjqvy2B-B4DuxyMjZKJaiLgHMDlic2TdtPjPiEas7ZYt35Bitf4p_NWArk-cXC9JtvAoVRChPOIvo8m-kKOO3IcoFF1AL6f1ifcfw-QN=s2000",
+    "https://lh3.googleusercontent.com/p/AF1QipMNZP8UFdK2hwNVUGmFOgVZt5DFxmveR69XFWDl=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHmTKqNCswZFvEjfki0TyPczb3FU3hXe8pO6N1WO957KOnXbbpEyh2AIQOGiJdgOZFew_TueZUO851VKcFMoRaRC3TaTZtvxxh3x2FWfIPNKSEfcpBhf7xYsXFuExLK82gTUh3TBQ=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHEBhfy-9K9HBPlNybw3jST-fcUqSd-bjhqYu8iPy9skqARk8jaZoIWzretifGuOlvx2_MYrvFd9jU6h6fDz6Ruto04AT7uPuSPSjTKH4Ks2SkEXk3E9gerTDpVfDHQLqJ7xfDL=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzV4qbsL9ufwfYa5hmvcuXTUov0tZuFcHiH7bpccDctZzYC5dKbDCLS5humM6Ps-rgrBzPUp2Z-HYSFrvk9mv44ZINw7-r3b0eKumcrIfvNl0w7kQUYeHQ_At8vH_n4EuMddGH=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1QYc6Sdxv_76OmDN-xDdOW6KneNAeVjJ5n90COsKpTJ_qxmGVTGgbITyN9egAWaPR4vr86zpTkml5o3QO1xqwT2KUjgIAc5xtiCmZBIdWY9tpOzhCMhKmeuL7-I3VD8Ir0Z4=s2000",
+    "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEtloZ2g8fTfkPQBfbMzq1MMvTE89hrN2bYCRKqQNklWV2PVOJvJnRCszl0DLVhY_jV6jjZ8pmlCFvVDhUO28PkQ_quan2oQryKGyiDB3pzzDLad4T_XqlPqWIzQ8Imde04TKwk=s2000"
   ],
   "reviews": [
     "Absolutely amazing atmosphere. The garden setting is a hidden gem in Accra. The lobster was perfectly cooked.",
@@ -32,40 +90,66 @@
     {
       "category": "Starters & Small Plates",
       "items": [
-        {"name": "Pork Belly Starter", "price": "GHS 95"},
-        {"name": "Shrimp Tempura", "price": "GHS 120"},
-        {"name": "Salami Flatbread", "price": "GHS 110"},
-        {"name": "Spicy Gizzard \u0026 Plantain", "price": "GHS 85"}
+        {
+          "name": "Pork Belly Starter",
+          "price": "GHS 95",
+          "description": "Slow-roasted crispy pork belly with apple compote.",
+          "dietary": "House Special"
+        },
+        {
+          "name": "Shrimp Tempura",
+          "price": "GHS 120",
+          "description": "Crispy prawns with spicy mayo dip.",
+          "dietary": "Seafood"
+        },
+        {
+          "name": "Salami Flatbread",
+          "price": "GHS 110",
+          "description": "Artisan flatbread with spicy salami and honey.",
+          "dietary": "Chef's Choice"
+        },
+        {
+          "name": "Spicy Gizzard & Plantain",
+          "price": "GHS 85",
+          "description": "Classic Ghanaian favorite with a Treehouse twist.",
+          "dietary": "Local Fusion"
+        }
       ]
     },
     {
       "category": "Main Course",
       "items": [
-        {"name": "Ribeye Steak", "price": "GHS 380"},
-        {"name": "Fish Curry", "price": "GHS 180"},
-        {"name": "Beef Teriyaki \u0026 Chinese Noodles", "price": "GHS 240"},
-        {"name": "Tagliatelle Pesto", "price": "GHS 160"},
-        {"name": "Saut\u00e9ed Prawn", "price": "GHS 220"},
-        {"name": "Fish and Chips", "price": "GHS 170"},
-        {"name": "Seafood Platter", "price": "GHS 450"},
-        {"name": "Treehouse Burger", "price": "GHS 140"}
+        {
+          "name": "Ribeye Steak",
+          "price": "GHS 380",
+          "description": "Premium aged ribeye with truffle butter.",
+          "dietary": "Signature"
+        },
+        {
+          "name": "Fish Curry",
+          "price": "GHS 180",
+          "description": "Aromatic coconut fish curry with jasmine rice.",
+          "dietary": "Spicy"
+        },
+        {
+          "name": "Beef Teriyaki & Chinese Noodles",
+          "price": "GHS 240",
+          "description": "Wok-fried noodles with glazed beef strips.",
+          "dietary": "Fusion"
+        }
       ]
     },
     {
       "category": "Desserts",
       "items": [
-        {"name": "Bread \u0026 Butter Pudding", "price": "GHS 90"},
-        {"name": "Creme Brulee", "price": "GHS 85"},
-        {"name": "Sticky Toffee", "price": "GHS 85"}
-      ]
-    },
-    {
-      "category": "Curated Cocktails",
-      "items": [
-        {"name": "Blueberry Paloma", "price": "GHS 105"},
-        {"name": "Tropical Mocktail", "price": "GHS 75"},
-        {"name": "Champagne Prawn Cocktail", "price": "GHS 115"}
+        {
+          "name": "Sticky Toffee",
+          "price": "GHS 85",
+          "description": "Warm date sponge with vanilla bean ice cream.",
+          "dietary": "Classic"
+        }
       ]
     }
-  ]
+  ],
+  "reservations": []
 }

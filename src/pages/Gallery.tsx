@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2 } from 'lucide-react';
-import galleryData from '../data/gallery.json';
+import { getRestaurantData } from '../services/dataService';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [images, setImages] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    getRestaurantData()
+      .then(data => setImages(data.gallery || []))
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -26,29 +32,35 @@ export default function Gallery() {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {galleryData.map((url, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx % 10 * 0.05 }}
-              className="relative group cursor-pointer overflow-hidden rounded-lg"
-              onClick={() => setSelectedImage(url)}
-            >
-              <img 
-                src={url} 
-                alt={`Gallery image ${idx}`}
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-[#1E3328]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Maximize2 className="w-8 h-8 text-[#B6915E]" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center py-20">
+             <div className="w-8 h-8 border-2 border-[#B6915E]/20 border-t-[#B6915E] rounded-full animate-spin" />
+          </div>
+        ) : (
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            {images.map((url, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx % 10 * 0.05 }}
+                className="relative group cursor-pointer overflow-hidden rounded-lg"
+                onClick={() => setSelectedImage(url)}
+              >
+                <img 
+                  src={url} 
+                  alt={`Gallery image ${idx}`}
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-[#1E3328]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Maximize2 className="w-8 h-8 text-[#B6915E]" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}

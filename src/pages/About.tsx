@@ -24,15 +24,15 @@ export default function About() {
           >
             <h1 className="font-serif text-4xl md:text-7xl text-[#F5F1EA] mb-6 md:mb-8 tracking-tight">Our Story</h1>
             <div className="space-y-4 md:space-y-6 font-sans text-[#F5F1EA]/70 leading-relaxed text-base md:text-lg">
-              <p>
-                Treehouse Restaurant is a hidden gem nestled in the heart of Nyaniba, Accra. What began as a dream to create a botanical escape in the urban bustle has evolved into a premier destination for fine dining and Afro-fusion culinary art.
-              </p>
-              <p>
-                Our menu is a celebration of local ingredients reimagined through modern techniques. Every dish tells a story of heritage, innovation, and passion.
-              </p>
-              <p>
-                Surrounded by lush greenery and the gentle whispers of the garden, Treehouse offers an immersive experience that engages all your senses. Whether it's an intimate date night or a vibrant celebration with friends, we provide the perfect canopy for your most cherished moments.
-              </p>
+              {data ? data.story.split('\n\n').map((para, i) => (
+                <p key={i}>{para}</p>
+              )) : (
+                <div className="space-y-4">
+                  <div className="h-4 bg-white/5 rounded w-full animate-pulse" />
+                  <div className="h-4 bg-white/5 rounded w-5/6 animate-pulse" />
+                  <div className="h-4 bg-white/5 rounded w-4/6 animate-pulse" />
+                </div>
+              )}
             </div>
 
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -40,18 +40,18 @@ export default function About() {
                 <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#B6915E]">Contact</h3>
                 <div className="flex items-center gap-3 text-[#F5F1EA]/80">
                   <Phone className="w-4 h-4 text-[#B6915E]" />
-                  <span>{data?.phone || '+233 20 891 4333'}</span>
+                  <span>{data?.phone}</span>
                 </div>
                 <div className="flex items-center gap-3 text-[#F5F1EA]/80">
-                  <Mail className="w-4 h-4 text-[#B6915E]" />
-                  <span>info@treehouseaccra.com</span>
+                  <MapPin className="w-4 h-4 text-[#B6915E]" />
+                  <span className="text-sm">{data?.address}</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <h3 className="font-sans text-xs tracking-[0.2em] uppercase text-[#B6915E]">Socials</h3>
                 <div className="flex items-center gap-4">
-                  <a href={data?.socials[0]} className="text-[#F5F1EA]/60 hover:text-[#B6915E] transition-colors"><Instagram className="w-6 h-6" /></a>
-                  <a href={data?.socials[1]} className="text-[#F5F1EA]/60 hover:text-[#B6915E] transition-colors"><Facebook className="w-6 h-6" /></a>
+                  {data?.socials[0] && <a href={data.socials[0]} target="_blank" rel="noopener noreferrer" className="text-[#F5F1EA]/60 hover:text-[#B6915E] transition-colors"><Instagram className="w-6 h-6" /></a>}
+                  {data?.socials[1] && <a href={data.socials[1]} target="_blank" rel="noopener noreferrer" className="text-[#F5F1EA]/60 hover:text-[#B6915E] transition-colors"><Facebook className="w-6 h-6" /></a>}
                 </div>
               </div>
             </div>

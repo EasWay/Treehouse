@@ -97,6 +97,24 @@ async function startServer() {
     res.json({ success: true, data: newData });
   });
 
+  // Submit Reservation
+  app.post('/api/reservations', async (req, res) => {
+    const reservation = req.body;
+    const db = await readDB();
+    if (!db.reservations) db.reservations = [];
+    
+    const newReservation = {
+      ...reservation,
+      id: Math.random().toString(36).substr(2, 9),
+      status: 'pending',
+      createdAt: new Date().toISOString()
+    };
+    
+    db.reservations.push(newReservation);
+    await writeDB(db);
+    res.json({ success: true, reservation: newReservation });
+  });
+
   // Logout
   app.post('/api/logout', (req, res) => {
     res.clearCookie('admin_token');

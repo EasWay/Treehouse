@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, Clock, Users, ArrowRight } from 'lucide-react';
+import { X, Calendar, Clock, Users, ArrowRight, CheckCircle } from 'lucide-react';
+import { submitReservation } from '../services/dataService';
 
 /* Custom Scrollbar for Luxury feel */
 const scrollbarStyles = `
@@ -31,10 +32,32 @@ interface ReservationModalProps {
 
 export default function ReservationModal({ onClose }: ReservationModalProps) {
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [guests, setGuests] = useState(2);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    date: 'Today',
+    time: '19:30'
+  });
 
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 sm:px-0">
+  const handleSubmit = async () => {
+    setLoading(true);
+    setStep(3); // Show loading state
+    try {
+      await submitReservation({
+        ...formData,
+        guests
+      });
+      setStep(4); // Show success
+    } catch (err) {
+      alert("Reservation failed. Please try again.");
+      setStep(2);
+    } finally {
+      setLoading(false);
+    }
+  };
       <style>{scrollbarStyles}</style>
       <motion.div 
         initial={{ opacity: 0 }}
@@ -124,13 +147,31 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                <h3 className="font-serif text-3xl font-light text-center mb-8">Personal Details</h3>
                <div className="space-y-5">
                  <div>
-                   <input type="text" placeholder="Full Name" className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-lg font-sans text-white focus:outline-none focus:border-tree-brass placeholder:text-white/30" />
+                   <input 
+                    type="text" 
+                    placeholder="Full Name" 
+                    value={formData.name}
+                    onChange={e => setFormData({...formData, name: e.target.value})}
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-lg font-sans text-white focus:outline-none focus:border-tree-brass placeholder:text-white/30" 
+                  />
                  </div>
                  <div>
-                   <input type="email" placeholder="Email Address" className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-lg font-sans text-white focus:outline-none focus:border-tree-brass placeholder:text-white/30" />
+                   <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    value={formData.email}
+                    onChange={e => setFormData({...formData, email: e.target.value})}
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-lg font-sans text-white focus:outline-none focus:border-tree-brass placeholder:text-white/30" 
+                  />
                  </div>
                  <div>
-                   <input type="tel" placeholder="Phone Number" className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-lg font-sans text-white focus:outline-none focus:border-tree-brass placeholder:text-white/30" />
+                   <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    value={formData.phone}
+                    onChange={e => setFormData({...formData, phone: e.target.value})}
+                    className="w-full bg-transparent border-b border-white/20 px-0 py-3 text-lg font-sans text-white focus:outline-none focus:border-tree-brass placeholder:text-white/30" 
+                  />
                  </div>
                </div>
                
@@ -138,7 +179,11 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                  <button onClick={() => setStep(1)} className="w-1/3 py-5 font-sans text-xs tracking-widest uppercase border border-white/20 rounded-full hover:bg-white/5">
                    Back
                  </button>
-                 <button onClick={() => setStep(3)} className="w-2/3 py-5 bg-tree-brass text-[#141414] font-sans text-xs tracking-widest uppercase rounded-full hover:bg-tree-amber transition-colors">
+                 <button 
+                  onClick={handleSubmit} 
+                  disabled={!formData.name || !formData.email}
+                  className="w-2/3 py-5 bg-tree-brass text-[#141414] font-sans text-xs tracking-widest uppercase rounded-full hover:bg-tree-amber transition-colors disabled:opacity-50"
+                 >
                    Confirm details
                  </button>
                </div>
@@ -152,8 +197,23 @@ export default function ReservationModal({ onClose }: ReservationModalProps) {
                </div>
                <h3 className="font-serif text-2xl">Confirming your space</h3>
                <p className="font-sans text-sm text-white/50 max-w-sm">
-                 Please wait while we secure your table under the canopy. We'll send a confirmation to your email shortly.
+                 Please wait while we secure your table under the canopy.
                </p>
+             </div>
+          </AnimateStep>
+
+          <AnimateStep step={step} currentStep={4}>
+             <div className="text-center space-y-6 flex flex-col items-center justify-center py-8">
+               <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                 <CheckCircle className="w-10 h-10 text-green-500" />
+               </div>
+               <h3 className="font-serif text-2xl text-green-400">Request Received</h3>
+               <p className="font-sans text-sm text-white/50 max-w-sm">
+                 Your request has been logged. We'll send a confirmation to your email shortly.
+               </p>
+               <button onClick={onClose} className="mt-4 px-8 py-3 border border-[#B6915E] text-[#B6915E] text-xs uppercase tracking-widest rounded-full">
+                  Close
+               </button>
              </div>
           </AnimateStep>
 

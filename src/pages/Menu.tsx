@@ -92,26 +92,29 @@ export default function Menu() {
             exit="exit"
             className="absolute inset-0 flex flex-col md:flex-row z-10"
           >
-            {/* Left Content Page (or Single Page on Mobile) */}
-            <div className="w-full md:w-1/2 h-full p-8 md:p-12 lg:p-20 flex flex-col">
+            {/* Left Content Page (or Top Page on Mobile) */}
+            <div className="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 lg:p-20 flex flex-col border-b md:border-b-0 border-white/5">
               {categories[pageIndex * 2] && (
                 <>
-                  <div className="mb-8 md:mb-12">
-                    <div className="flex items-center gap-3 text-[#B6915E] mb-3 md:mb-4">
+                  <div className="mb-4 md:mb-12">
+                    <div className="flex items-center gap-3 text-[#B6915E] mb-2 md:mb-4">
                       {getCategoryIcon(categories[pageIndex * 2].category)}
                       <span className="font-sans text-[8px] md:text-[10px] tracking-[0.4em] uppercase">Selection 0{pageIndex * 2 + 1}</span>
                     </div>
-                    <h2 className="font-serif text-3xl md:text-5xl text-[#F5F1EA] mb-2">{categories[pageIndex * 2].category}</h2>
+                    <h2 className="font-serif text-2xl md:text-5xl text-[#F5F1EA] mb-1 md:mb-2">{categories[pageIndex * 2].category}</h2>
                     <div className="w-10 md:w-12 h-0.5 bg-[#B6915E]" />
                   </div>
-                  <div className="space-y-6 md:space-y-8 overflow-y-auto custom-scrollbar pr-2 md:pr-4">
+                  <div className="space-y-4 md:space-y-8 overflow-y-auto custom-scrollbar pr-2 md:pr-4">
                     {categories[pageIndex * 2].items.map((item, i) => (
                       <div key={i} className="group">
                         <div className="flex justify-between items-baseline gap-2 md:gap-4 mb-1">
-                          <h3 className="font-serif text-lg md:text-xl text-[#F5F1EA] group-hover:text-[#B6915E] transition-colors">{item.name}</h3>
-                          <span className="font-serif text-[#B6915E] text-sm md:text-base">{item.price}</span>
+                          <h3 className="font-serif text-base md:text-xl text-[#F5F1EA] group-hover:text-[#B6915E] transition-colors flex items-center gap-2">
+                            {item.name}
+                            {item.dietary && <span className="font-sans text-[6px] md:text-[8px] uppercase tracking-widest px-1 md:px-2 py-0.5 border border-[#B6915E]/30 rounded text-[#B6915E]/60">{item.dietary}</span>}
+                          </h3>
+                          <span className="font-serif text-[#B6915E] text-xs md:text-base">{item.price}</span>
                         </div>
-                        <p className="font-sans text-[10px] md:text-xs text-[#F5F1EA]/30 italic leading-relaxed">{item.description || "Premium seasonal ingredients masterfully prepared."}</p>
+                        <p className="font-sans text-[9px] md:text-xs text-[#F5F1EA]/30 italic leading-relaxed line-clamp-2 md:line-clamp-none">{item.description}</p>
                       </div>
                     ))}
                   </div>
@@ -119,26 +122,29 @@ export default function Menu() {
               )}
             </div>
 
-            {/* Right Content Page (Hidden on Mobile, replaced by pagination) */}
-            <div className="hidden md:flex md:w-1/2 h-full p-12 lg:p-20 flex-col border-l border-white/5">
+            {/* Right Content Page (or Bottom Page on Mobile) */}
+            <div className="flex w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 lg:p-20 flex-col md:border-l border-white/5">
               {categories[pageIndex * 2 + 1] ? (
                 <>
-                  <div className="mb-12 text-right flex flex-col items-end">
-                    <div className="flex items-center gap-4 text-[#B6915E] mb-4">
-                      <span className="font-sans text-[10px] tracking-[0.4em] uppercase">Selection 0{pageIndex * 2 + 2}</span>
+                  <div className="mb-4 md:mb-12 text-right flex flex-col items-end">
+                    <div className="flex items-center gap-4 text-[#B6915E] mb-2 md:mb-4">
+                      <span className="font-sans text-[8px] md:text-[10px] tracking-[0.4em] uppercase">Selection 0{pageIndex * 2 + 2}</span>
                       {getCategoryIcon(categories[pageIndex * 2 + 1].category)}
                     </div>
-                    <h2 className="font-serif text-5xl text-[#F5F1EA] mb-2">{categories[pageIndex * 2 + 1].category}</h2>
+                    <h2 className="font-serif text-2xl md:text-5xl text-[#F5F1EA] mb-1 md:mb-2">{categories[pageIndex * 2 + 1].category}</h2>
                     <div className="w-12 h-0.5 bg-[#B6915E]" />
                   </div>
-                  <div className="space-y-8 overflow-y-auto custom-scrollbar pl-4">
+                  <div className="space-y-4 md:space-y-8 overflow-y-auto custom-scrollbar pl-2 md:pl-4">
                     {categories[pageIndex * 2 + 1].items.map((item, i) => (
                       <div key={i} className="group text-right">
-                        <div className="flex justify-between flex-row-reverse items-baseline gap-4 mb-1">
-                          <h3 className="font-serif text-xl text-[#F5F1EA] group-hover:text-[#B6915E] transition-colors">{item.name}</h3>
-                          <span className="font-serif text-[#B6915E]">{item.price}</span>
+                        <div className="flex justify-between flex-row-reverse items-baseline gap-2 md:gap-4 mb-1">
+                          <h3 className="font-serif text-base md:text-xl text-[#F5F1EA] group-hover:text-[#B6915E] transition-colors flex flex-row-reverse items-center gap-2">
+                            {item.name}
+                            {item.dietary && <span className="font-sans text-[6px] md:text-[8px] uppercase tracking-widest px-1 md:px-2 py-0.5 border border-[#B6915E]/30 rounded text-[#B6915E]/60">{item.dietary}</span>}
+                          </h3>
+                          <span className="font-serif text-[#B6915E] text-xs md:text-base">{item.price}</span>
                         </div>
-                        <p className="font-sans text-xs text-[#F5F1EA]/30 italic">{item.description || "Crafted with botanical inspiration."}</p>
+                        <p className="font-sans text-[9px] md:text-xs text-[#F5F1EA]/30 italic line-clamp-2 md:line-clamp-none">{item.description}</p>
                       </div>
                     ))}
                   </div>
