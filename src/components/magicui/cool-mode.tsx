@@ -32,7 +32,7 @@ export function CoolMode({ children, options }: CoolModeProps) {
       rotation: number;
       vRotation: number;
       scale: number;
-      element: HTMLImageElement;
+      element: HTMLElement;
     }[]
   >([]);
 
