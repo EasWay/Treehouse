@@ -20,6 +20,12 @@ async function startServer() {
   app.use(express.json());
   app.use(cookieParser());
 
+  // Site Suspension Middleware
+  // To re-enable the site, comment out the following block:
+  app.use((req, res, next) => {
+    res.status(503).send('Site temporarily suspended');
+  });
+
   // Helper to read DB
   const readDB = async () => {
     try {
