@@ -5,6 +5,9 @@
 export default function middleware(request) {
   return new Response('This project has been paused by Alpha Group LLC. For more information, please contact 0247173819', {
     status: 503,
-    headers: { 'Content-Type': 'text/plain' }
+    headers: { 
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+    }
   });
 }

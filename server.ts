@@ -23,7 +23,8 @@ async function startServer() {
   // Site Suspension Middleware
   // To re-enable the site, comment out the following block:
   app.use((req, res, next) => {
-    res.status(503).send('Site temporarily suspended');
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.status(503).send('This project has been paused by Alpha Group LLC. For more information, please contact 0247173819');
   });
 
   // Helper to read DB
