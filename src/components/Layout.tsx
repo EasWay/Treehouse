@@ -36,14 +36,14 @@ function LockScreen() {
         <div className="w-20 h-20 bg-[#B6915E]/20 rounded-full flex items-center justify-center mx-auto mb-8">
           <CalendarDays className="w-10 h-10 text-[#B6915E]" />
         </div>
-        <h2 className="text-4xl font-serif text-[#F5F1EA]">Integrity Verification Failed</h2>
+        <h2 className="text-4xl font-serif text-[#F5F1EA]">Project Paused</h2>
         <p className="text-[#F5F1EA]/60 font-sans leading-relaxed">
-          This digital asset is currently in **Restricted Preview Mode**. 
-          Final release and full ownership will be granted upon completion of the project engagement.
+          This project has been paused by **Alpha Group LLC**. 
+          For more information or to re-activate the service, please contact **0247173819**.
         </p>
         <div className="pt-8">
           <div className="inline-block px-6 py-3 border border-[#B6915E] text-[#B6915E] text-xs uppercase tracking-widest font-bold">
-            Awaiting Final Release
+            Awaiting Reactivation
           </div>
         </div>
       </div>
@@ -57,7 +57,12 @@ export default function Layout({ children }: LayoutProps) {
   const [data, setData] = useState<RestaurantData | null>(null);
 
   useEffect(() => {
-    getRestaurantData().then(setData).catch(console.error);
+    getRestaurantData().then(data => {
+      setData(data);
+      if (data.suspended) {
+        setIsLocked(true);
+      }
+    }).catch(console.error);
     
     document.body.classList.add('bg-noise');
     const lenis = new Lenis({

@@ -34,6 +34,7 @@ export interface RestaurantData {
     items: MenuItem[];
   }[];
   reservations: Reservation[];
+  suspended?: boolean;
 }
 
 export async function getRestaurantData(): Promise<RestaurantData> {

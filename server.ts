@@ -20,13 +20,6 @@ async function startServer() {
   app.use(express.json());
   app.use(cookieParser());
 
-  // Site Suspension Middleware
-  // To re-enable the site, comment out the following block:
-  app.use((req, res, next) => {
-    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-    res.status(503).send('This project has been paused by Alpha Group LLC. For more information, please contact 0247173819');
-  });
-
   // Helper to read DB
   const readDB = async () => {
     try {
@@ -66,7 +59,7 @@ async function startServer() {
   app.get('/api/data', async (req, res) => {
     console.log('API Request: GET /api/data');
     const data = await readDB();
-    res.json(data);
+    res.json({ ...data, suspended: true });
   });
 
   // Admin Login
